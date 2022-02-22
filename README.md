@@ -17,10 +17,4 @@ MVVM: Pokemon List View, Detail View of the Pokemon selected showing info, TabVi
  
 **3. Potential sources of complexity and difficulty**
 
-Rating the strength of the group of pokemons selected
-
-Dealing with abundance of items – organizing 850 different Pokemon in the view
-
-Dealing with maps
-
-Subscribing changes to the data store and calling the API when generating the group
+We think it may be difficult to rate the strength of the group of Pokemon selected, since we have to combine multiple Pokemon to do this. It may also prove difficult to deal with abundance of items, since we have to organize 850 different Pokemon in the view. If we create a map view for the Pokemon, it will potentially prove challenging to display the points on a map and coordinate with a map API. Finally, we may face bugs with regards to subscribing changes to the data store and calling the API when generating the group of Pokemon.
