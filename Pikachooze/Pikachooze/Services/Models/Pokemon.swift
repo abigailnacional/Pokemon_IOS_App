@@ -12,3 +12,4 @@ struct Pokemon: Identifiable, Codable {
     var inInventory: Bool? = false
 }
 
+
