@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct PikachoozeApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

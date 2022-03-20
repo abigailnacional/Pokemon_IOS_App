@@ -1,16 +1,11 @@
-//
-//  ContentView.swift
-//  Pikachooze
-//
-//  Created by student on 3/17/22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    var pokemonStore = PokemonStore(apiService: PokemonAPIService())
     var body: some View {
         Text("Hello, world!")
             .padding()
+            .task{await pokemonStore.getPokemon()}
     }
 }
 
