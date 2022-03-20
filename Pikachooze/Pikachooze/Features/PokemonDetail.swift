@@ -1,8 +1,7 @@
-//
-//  PokemonDetail.swift
-//  Pikachooze
-//
-//  Created by Karina Ng on 3/20/22.
-//
-
 import Foundation
+import SwiftUI
+
+struct PokemonDetail: View {
+    @StateObject var viewModel: DetailView
+    
+}
