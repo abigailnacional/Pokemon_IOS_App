@@ -8,7 +8,7 @@ struct Pokemon: Identifiable, Codable {
     var types: [String]
     var resistant: [String]
     var weaknesses: [String]
-    var image: URL
+    var image: URL?
     var inInventory: Bool? = false
 }
 
