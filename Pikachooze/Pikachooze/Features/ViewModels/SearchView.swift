@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-enum LoadingState{
+enum LoadingState {
     case notAvailable
     case loading
     case success

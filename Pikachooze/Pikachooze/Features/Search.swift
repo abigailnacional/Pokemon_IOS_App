@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SearchScreen: View {
       @StateObject var viewModel: SearchView
+    //@StateObject var viewM: PokemonDetailView
 
       var body: some View {
         Group {
@@ -14,7 +15,7 @@ struct SearchScreen: View {
           case .failed:
             Text("Error")
           case .success:
-            Search(viewModel: viewModel)
+              Search(viewModel: viewModel)
           }
         }
         .task { await viewModel.getPokemon() }
@@ -34,6 +35,7 @@ struct SearchScreen: View {
 
 struct Search: View {
     @StateObject var viewModel: SearchView
+    //@StateObject var viewM: PokemonDetailView
     
     var pokemon: [Pokemon] = []
     
@@ -41,7 +43,7 @@ struct Search: View {
         NavigationView{
             List(viewModel.filteredPokemon) { pokemon in
                 NavigationLink(destination:
-                    PokemonDetail()
+                                PokemonDetail()
                 ) {
                     SearchRow(pokemon: pokemon)
                 }
@@ -72,8 +74,8 @@ struct SearchRow: View {
     }
 }
 
-struct Search_Previews: PreviewProvider {
-    static var previews: some View {
-        Search(viewModel: SearchView(apiService: PokemonAPIService()))
-    }
-}
+//struct Search_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Search(viewModel: SearchView(apiService: PokemonAPIService()), viewM: PokemonDetailView(apiService: PokemonAPIService(), myPokemon: pokemon[1])
+//    }
+//}
