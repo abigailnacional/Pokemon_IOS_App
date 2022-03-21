@@ -8,7 +8,6 @@ enum Tab {
     case Inventory
 }
 
-
 struct TabContainer: View {
     @State var selectedTab: Tab = .Home
     
@@ -19,7 +18,9 @@ struct TabContainer: View {
                     Home()
                 }
                 .tabItem {
-                    Label("Home", systemImage: "home")
+                    Label("Home", systemImage: "house")
+                        
+                        
                 }
                 .tag(Tab.Home)
                 
@@ -27,7 +28,8 @@ struct TabContainer: View {
                     Battles()
                 }
                 .tabItem {
-                    Label("Battles", systemImage: "circle.circle")
+                    Label("Battles", systemImage: "person.2.fill")
+                        
                 }
                 .tag(Tab.Battles)
                 
@@ -35,7 +37,8 @@ struct TabContainer: View {
                     Search()
                 }
                 .tabItem {
-                    Label("Search", systemImage: "search")
+                    Label("Search", systemImage: "magnifyingglass")
+                        
                 }
                 .tag(Tab.Search)
                 
@@ -43,13 +46,15 @@ struct TabContainer: View {
                     Inventory()
                 }
                 .tabItem{
-                    Label("Inventory", systemImage: "circle")
+                    Label("Inventory", systemImage: "list.dash")
+                        
                 }
                 .tag(Tab.Inventory)
             }
         }
     }
 }
+
 
 struct Tab_Container_Previews: PreviewProvider {
     static var previews: some View {
