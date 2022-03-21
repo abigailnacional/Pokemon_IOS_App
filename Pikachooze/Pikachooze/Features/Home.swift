@@ -3,6 +3,18 @@ import SwiftUI
 
 struct Home: View {
     var body: some View {
+        ScrollView {
+            VStack {
+                Text("Welcome back, Professor Phillips!")
+                Image("profile photo")
+                    .padding(.top, 20)
+                    .padding(.bottom, 20)
+                Text("Your Top 3")
+                    .padding(.bottom, 20)
+                Image("dummy top three")
+            }
+        }
+        /*
         TabView {
             ZStack {
                 Text("Pickachooze")
@@ -12,7 +24,7 @@ struct Home: View {
                     Text("Your top 3")
                 }
             }
-        }
+        }*/
     }
 }
 
