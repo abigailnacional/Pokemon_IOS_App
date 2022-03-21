@@ -1,24 +1,57 @@
 
 import SwiftUI
 
+struct SearchScreen: View {
+      @StateObject var viewModel: SearchView
+
+      var body: some View {
+        Group {
+          switch viewModel.state {
+          case .loading:
+            ProgressView()
+          case .notAvailable:
+            Text("Cannot reach API")
+          case .failed:
+            Text("Error")
+          case .success:
+            Search(viewModel: viewModel)
+          }
+        }
+        .task { await viewModel.getPokemon() }
+        .alert("Error", isPresented: $viewModel.hasAPIError, presenting: viewModel.state) { detail in
+            Button("Retry") {
+              Task { await viewModel.getPokemon() }
+            }
+            Button("Cancel") {}
+          }
+          message: { detail in
+            if case let .failed(error) = detail {
+              Text(error.localizedDescription)
+            }
+          }
+      }
+}
+
 struct Search: View {
+    @StateObject var viewModel: SearchView
+    
     var pokemon: [Pokemon] = []
     
     var body: some View {
-        /*
-         NavigationView{
-             Text("Choose Your Pokemon!")
-             List{
-                 
-             }
-         }
-         */
-        Text("Choose Your Pokemon!")
-        List(pokemon){ pokemon in
-            SearchRow(pokemon: pokemon)
+        NavigationView{
+            List(viewModel.filteredPokemon) { pokemon in
+                NavigationLink(destination:
+                    PokemonDetail()
+                ) {
+                    SearchRow(pokemon: pokemon)
+                }
+            }
+            .searchable(text: $viewModel.searchText)
         }
+        .navigationTitle("Choose Your Pokemon!")
     }
 }
+
 
 struct SearchRow: View {
     let pokemon: Pokemon
@@ -41,6 +74,6 @@ struct SearchRow: View {
 
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
-        Search()
+        Search(viewModel: SearchView(apiService: PokemonAPIService()))
     }
 }
