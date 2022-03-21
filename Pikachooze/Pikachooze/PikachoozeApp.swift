@@ -12,7 +12,7 @@ struct PikachoozeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContainer()
         }
     }
 }

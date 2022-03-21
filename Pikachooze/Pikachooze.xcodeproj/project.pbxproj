@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BFB8F9D27E81426005EB157 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8F9C27E81426005EB157 /* Home.swift */; };
+		1BFB8F9F27E81482005EB157 /* Battles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8F9E27E81482005EB157 /* Battles.swift */; };
+		1BFB8FA127E8148F005EB157 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8FA027E8148F005EB157 /* Search.swift */; };
+		1BFB8FA327E81496005EB157 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8FA227E81496005EB157 /* Inventory.swift */; };
+		1BFB8FA527E814CD005EB157 /* TabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFB8FA427E814CD005EB157 /* TabContainer.swift */; };
 		3F1FAAEB27E3DE2F0040F1C6 /* PikachoozeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAAEA27E3DE2F0040F1C6 /* PikachoozeApp.swift */; };
 		3F1FAAED27E3DE2F0040F1C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAAEC27E3DE2F0040F1C6 /* ContentView.swift */; };
 		3F1FAAEF27E3DE310040F1C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1FAAEE27E3DE310040F1C6 /* Assets.xcassets */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BFB8F9C27E81426005EB157 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		1BFB8F9E27E81482005EB157 /* Battles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battles.swift; sourceTree = "<group>"; };
+		1BFB8FA027E8148F005EB157 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		1BFB8FA227E81496005EB157 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		1BFB8FA427E814CD005EB157 /* TabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainer.swift; sourceTree = "<group>"; };
 		3F1FAAE727E3DE2F0040F1C6 /* Pikachooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pikachooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1FAAEA27E3DE2F0040F1C6 /* PikachoozeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PikachoozeApp.swift; sourceTree = "<group>"; };
 		3F1FAAEC27E3DE2F0040F1C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +59,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BFB8F9B27E8140D005EB157 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1BFB8F9C27E81426005EB157 /* Home.swift */,
+				1BFB8F9E27E81482005EB157 /* Battles.swift */,
+				1BFB8FA027E8148F005EB157 /* Search.swift */,
+				1BFB8FA227E81496005EB157 /* Inventory.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		3F1FAADE27E3DE2F0040F1C6 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +89,11 @@
 		3F1FAAE927E3DE2F0040F1C6 /* Pikachooze */ = {
 			isa = PBXGroup;
 			children = (
+				1BFB8F9B27E8140D005EB157 /* Features */,
 				3F1FAB0C27E52E340040F1C6 /* Info.plist */,
 				3F1FAAF827E3E6D60040F1C6 /* Services */,
 				3F1FAAEA27E3DE2F0040F1C6 /* PikachoozeApp.swift */,
+				1BFB8FA427E814CD005EB157 /* TabContainer.swift */,
 				3F1FAAEC27E3DE2F0040F1C6 /* ContentView.swift */,
 				3F1FAAEE27E3DE310040F1C6 /* Assets.xcassets */,
 				3F1FAAF027E3DE310040F1C6 /* Preview Content */,
@@ -195,9 +218,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BFB8FA527E814CD005EB157 /* TabContainer.swift in Sources */,
+				1BFB8FA127E8148F005EB157 /* Search.swift in Sources */,
 				3F1FAB0527E3E7560040F1C6 /* PokemonEndpoint.swift in Sources */,
+				1BFB8FA327E81496005EB157 /* Inventory.swift in Sources */,
 				3F1FAAFF27E3E71A0040F1C6 /* GraphQLAPI.swift in Sources */,
 				3F1FAB0327E3E7420040F1C6 /* PokemonStore.swift in Sources */,
+				1BFB8F9F27E81482005EB157 /* Battles.swift in Sources */,
+				1BFB8F9D27E81426005EB157 /* Home.swift in Sources */,
 				3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */,
 				3F1FAAED27E3DE2F0040F1C6 /* ContentView.swift in Sources */,
 				3F1FAAEB27E3DE2F0040F1C6 /* PikachoozeApp.swift in Sources */,
