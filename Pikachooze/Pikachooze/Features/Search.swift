@@ -1,24 +1,15 @@
 
 import SwiftUI
 
-struct SearchScreen: View {
-      @StateObject var viewModel: SearchView
-    //@StateObject var viewM: PokemonDetailView
-
-      var body: some View {
-        Search(viewModel: viewModel)
-      }
-}
-
 struct Search: View {
     @StateObject var viewModel: SearchView
-    //@StateObject var viewM: PokemonDetailView
+    @StateObject var viewM: PokemonDetailView
     
     var body: some View {
         NavigationView{
             List(viewModel.filteredPokemon) { pokemon in
                 NavigationLink(destination:
-                                PokemonDetail()
+                                PokeScreen(viewModel: viewM)
                 ) {
                     SearchRow(pokemon: pokemon)
                 }

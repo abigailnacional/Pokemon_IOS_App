@@ -30,8 +30,8 @@ struct TabContainer: View {
                 }
                 .tag(Tab.Battles)
                 
-                NavigationView{
-                    Search(viewModel: SearchView(pokemonStore: pokemonStore))
+                NavigationView {
+                    Search(viewModel: SearchView(pokemonStore: pokemonStore), viewM: PokemonDetailView(apiService: PokemonAPIService(), pokemon: pokemonStore.inventoryPokemon[1], pokeStore: PokemonStore()))
                 }
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
