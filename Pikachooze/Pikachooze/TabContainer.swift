@@ -39,7 +39,7 @@ struct TabContainer: View {
                 .tag(Tab.Search)
                 
                 NavigationView{
-                    Inventory()
+                    InventoryScreen(viewModel: InventoryView(pokeStore: pokemonStore))
                 }
                 .tabItem{
                     Label("Inventory", systemImage: "list.dash")

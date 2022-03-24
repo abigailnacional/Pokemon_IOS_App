@@ -29,18 +29,14 @@ struct PokemonDetail: View {
                     image
                         .resizable()
                 } placeholder: {
-                    if pokemon.image != nil {
-                        ProgressView()
-                    } else {
-                        Image(systemName: "book.fill")
-                    }
+                    Image(systemName: "book.fill")
                 }
-                .frame(maxWidth: 115, maxHeight: 185)
-                .cornerRadius(6)
-                Text("Nickname")
-                Text("Type")
-                Text("Gender")
             }
+            .frame(maxWidth: 115, maxHeight: 185)
+            .cornerRadius(6)
+            Text("Nickname")
+            Text("Type")
+            Text("Gender")
         }
     }
 }
