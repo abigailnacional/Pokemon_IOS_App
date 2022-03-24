@@ -6,38 +6,13 @@ struct SearchScreen: View {
     //@StateObject var viewM: PokemonDetailView
 
       var body: some View {
-        Group {
-          switch viewModel.state {
-          case .loading:
-            ProgressView()
-          case .notAvailable:
-            Text("Cannot reach API")
-          case .failed:
-            Text("Error")
-          case .success:
-              Search(viewModel: viewModel)
-          }
-        }
-        .task { await viewModel.getPokemon() }
-        .alert("Error", isPresented: $viewModel.hasAPIError, presenting: viewModel.state) { detail in
-            Button("Retry") {
-              Task { await viewModel.getPokemon() }
-            }
-            Button("Cancel") {}
-          }
-          message: { detail in
-            if case let .failed(error) = detail {
-              Text(error.localizedDescription)
-            }
-          }
+        Search(viewModel: viewModel)
       }
 }
 
 struct Search: View {
     @StateObject var viewModel: SearchView
     //@StateObject var viewM: PokemonDetailView
-    
-    var pokemon: [Pokemon] = []
     
     var body: some View {
         NavigationView{
