@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 class SearchView: ObservableObject {
-    private let pokemonStore: PokemonStore
+    let pokemonStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var pokemon: [Pokemon] = []

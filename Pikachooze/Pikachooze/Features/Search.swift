@@ -3,13 +3,11 @@ import SwiftUI
 
 struct Search: View {
     @StateObject var viewModel: SearchView
-    @StateObject var viewM: PokemonDetailView
     
     var body: some View {
         NavigationView{
             List(viewModel.filteredPokemon) { pokemon in
-                NavigationLink(destination:
-                                PokeScreen(viewModel: viewM)
+                NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
                 ) {
                     SearchRow(pokemon: pokemon)
                 }

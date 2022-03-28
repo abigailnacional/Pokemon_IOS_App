@@ -1,31 +1,12 @@
 import SwiftUI
 
-struct PokeScreen: View {
-    @StateObject var viewModel: PokemonDetailView
-    
-    var body: some View {
-        Group {
-            switch viewModel.state {
-            case .loading: ProgressView()
-            case .notAvailable: Text("Cannot reach API")
-            case .failed(_): Text("Error")
-            case .success(let pokemon): PokemonDetail(viewModel: viewModel, pokemon: pokemon)
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) { Button(viewModel.buttonLabel()) { viewModel.buttonTapped() } }
-                    }
-            }
-        }
-    }
-}
-
 struct PokemonDetail: View {
     @StateObject var viewModel: PokemonDetailView
-    let pokemon: Pokemon
     
     var body: some View {
         ScrollView {
             VStack {
-                AsyncImage(url: pokemon.image) { image in
+                AsyncImage(url: viewModel.pokemon.image) { image in
                     image
                         .resizable()
                 } placeholder: {

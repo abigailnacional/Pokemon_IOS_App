@@ -1,28 +1,17 @@
 import Foundation
 import Combine
+import UIKit
 
-enum LoadingState {
-    case notAvailable
-    case loading
-    case success(data: Pokemon)
-    case failed(error: Error)
-}
-
-@MainActor
 class PokemonDetailView: ObservableObject {
-    let apiService: PokemonAPIService
-    
-    @Published private(set) var state: LoadingState = .notAvailable
+
     private var pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inInventoryList: Bool = false
-    @Published var hasAPIError: Bool = false
     @Published var pokemon: Pokemon
     @Published var inventoryPokemon: [Pokemon] = []
     
-    init(apiService: PokemonAPIService, pokemon: Pokemon, pokeStore: PokemonStore) {
-        self.apiService = apiService
+    init(_ pokemon: Pokemon, _ pokeStore: PokemonStore) {
         self.pokemon = pokemon
         self.pokeStore = pokeStore
         pokeStore.$inventoryPokemon
@@ -45,7 +34,12 @@ class PokemonDetailView: ObservableObject {
             pokeStore.removePokemonFromInventory(pokemon)
         }
         else {
-            pokeStore.addPokemonToInventory(pokemon)
+            if (pokeStore.addPokemonToInventory(pokemon)){
+                
+            } else{
+                
+                
+            }
         }
     }
 }
