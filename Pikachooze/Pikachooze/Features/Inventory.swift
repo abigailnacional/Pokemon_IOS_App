@@ -14,7 +14,7 @@ struct InventoryScreen: View {
                         Label("Remove", systemImage: "trash")
                     }
                 }
-        }.navigationTitle("Your Pokemon")
+        }.navigationTitle("My Pokemon")
     }
 }
 

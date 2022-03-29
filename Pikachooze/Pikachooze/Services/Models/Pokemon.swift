@@ -10,6 +10,5 @@ struct Pokemon: Identifiable, Codable {
     var resistant: [String]
     var weaknesses: [String]
     var image: URL
-    
 }
 
