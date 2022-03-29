@@ -22,22 +22,20 @@ class PokemonDetailView: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func buttonLabel() -> String {
-        if inInventoryList == true {
-            return "Remove"
-        }
-        return "Add"
-    }
+//    func nicknameSetter() -> String {
+//        if case let nicknam == pokemon.nickname {
+//            return nicknam
+//        } else {
+//            
+//        }
+//    }
     
     func buttonTapped() {
         if inInventoryList == true {
             pokeStore.removePokemonFromInventory(pokemon)
         }
         else {
-            if (pokeStore.addPokemonToInventory(pokemon)){
-                
-            } else{
-                
+            if pokeStore.addPokemonToInventory(pokemon) == false {
                 
             }
         }
