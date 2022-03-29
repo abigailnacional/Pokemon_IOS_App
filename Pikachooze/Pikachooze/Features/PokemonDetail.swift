@@ -12,12 +12,29 @@ struct PokemonDetail: View {
                 } placeholder: {
                     Image(systemName: "book.fill")
                 }
+                .frame(maxWidth: 150, maxHeight: 150)
+                Text(viewModel.pokemon.name)
+                    .font(.headline)
+                    .textCase(.uppercase)
             }
-            .frame(maxWidth: 115, maxHeight: 185)
+            .padding(30)
+            .border(Color.gray, width: 5)
             .cornerRadius(6)
-            Text("Nickname")
-            Text("Type")
-            Text("Gender")
+            VStack(alignment: .leading){
+                Text("Nickname")
+                    .padding(.top, 20)
+                Text("Type")
+                Text("Gender")
+            }
+        }
+        .padding()
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) { Button(action: {
+                viewModel.buttonTapped()
+            }, label: {viewModel.inInventoryList ? Text ("Remove") : Text("Add")}
+            )
+                
+            }
         }
     }
 }
