@@ -5,15 +5,13 @@ struct Search: View {
     @StateObject var viewModel: SearchView
     
     var body: some View {
-        NavigationView{
-            List(viewModel.filteredPokemon) { pokemon in
-                NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
-                ) {
-                    SearchRow(pokemon: pokemon)
-                }
+        List(viewModel.filteredPokemon) { pokemon in
+            NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
+            ) {
+                SearchRow(pokemon: pokemon)
             }
-            .searchable(text: $viewModel.searchText)
         }
+        .searchable(text: $viewModel.searchText)
         .navigationTitle("Choose Your Pokemon!")
     }
 }
