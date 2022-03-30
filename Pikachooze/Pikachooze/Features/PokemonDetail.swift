@@ -21,22 +21,21 @@ struct PokemonDetail: View {
             .border(Color.gray, width: 5)
             .cornerRadius(6)
             VStack(alignment: .leading) {
-                    Text("Nickname")
-                        .padding(.top, 20)
-                
-                    Spacer()
-                    HStack(spacing: 40) {
-                        VStack() {
-                            Text("Types:")
-                                .font(.headline)
-                                .padding(.trailing, 5)
-                            ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ)}
-                        }
-                        VStack {
-                            Text("Resistances:")
-                                .font(.headline)
-                                ForEach(viewModel.pokemon.resistant, id: \.self) { rest in Text(rest)}
-                        }
+                //                    Text("Nickname")
+                //                        .padding(.top, 20)
+                Spacer()
+                HStack(spacing: 40) {
+                    VStack() {
+                        Text("Types:")
+                            .font(.headline)
+                            .padding(.trailing, 5)
+                        ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ)}
+                    }
+                    VStack {
+                        Text("Resistances:")
+                            .font(.headline)
+                        ForEach(viewModel.pokemon.resistant, id: \.self) { rest in Text(rest)}
+                    }
                 }
             }
         }
@@ -46,7 +45,9 @@ struct PokemonDetail: View {
                 viewModel.buttonTapped()
             }, label: {viewModel.inInventoryList ? Text ("Remove") : Text("Add")}
             )
-                
+            .alert("Oh no! Your inventory has reached maximum capacity :(", isPresented: $viewModel.isFull) {
+                Button("OK", role: .cancel) { }
+            }
             }
         }
     }

@@ -8,6 +8,7 @@ class PokemonDetailView: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inInventoryList: Bool = false
+    @Published var isFull: Bool = false
     @Published var pokemon: Pokemon
     @Published var inventoryPokemon: [Pokemon] = []
     
@@ -36,7 +37,7 @@ class PokemonDetailView: ObservableObject {
         }
         else {
             if pokeStore.addPokemonToInventory(pokemon) == false {
-                
+                isFull = true
             }
         }
     }

@@ -6,7 +6,10 @@ struct InventoryScreen: View {
     
     var body: some View {
         List(viewModel.inventoryPokemon) { pokemon in
-            InventoryRow(pokemon: pokemon)
+            NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, pokeStore))
+            ) {
+                InventoryRow(pokemon: pokemon)
+            }
                 .swipeActions(edge: .trailing) {
                     Button(role: .destructive) {
                         pokeStore.removePokemonFromInventory(pokemon)
@@ -31,12 +34,10 @@ struct InventoryRow: View {
             } placeholder: {
                   Image(systemName: "book.fill")
                 }
-            }
-            .frame(maxWidth: 70, maxHeight: 60)
-            VStack(alignment: .leading) {
+            .frame(maxWidth: 70, maxHeight: 90)
                 Text(pokemon.name)
                     .font(.headline)
-            }
+        }
     }
 }
 
