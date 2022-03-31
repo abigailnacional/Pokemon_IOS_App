@@ -12,6 +12,7 @@ struct Search: View {
             }
         }
         .searchable(text: $viewModel.searchText)
+        .disableAutocorrection(true)
         .navigationTitle("Choose Your Pokemon!")
     }
 }
