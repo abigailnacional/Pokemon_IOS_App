@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class BattleView: ObservableObject {
-    private var pokeStore: PokemonStore
+    let pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inventoryPokemon: [Pokemon] = []
@@ -24,6 +24,8 @@ class BattleView: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
+
     
     var playerWon: Bool {
         //Iterate through all of gym leader's Pokemon

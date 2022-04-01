@@ -11,6 +11,8 @@ enum Tab {
 struct TabContainer: View {
     @State var selectedTab: Tab = .Home
     @EnvironmentObject var pokemonStore: PokemonStore
+    
+    
     var body: some View {
         Group {
             TabView(selection: $selectedTab){
@@ -23,7 +25,7 @@ struct TabContainer: View {
                 .tag(Tab.Home)
                 
                 NavigationView{
-                    Battles()
+                    Battles(viewModel: BattleView(gymLeader: gymLeader, pokeStore: pokemonStore))
                 }
                 .tabItem {
                     Label("Battles", systemImage: "person.2.fill")
@@ -51,9 +53,12 @@ struct TabContainer: View {
     }
 }
 
-
-struct Tab_Container_Previews: PreviewProvider {
-    static var previews: some View {
-        TabContainer()
-    }
-}
+//
+//struct Tab_Container_Previews: PreviewProvider {
+//    static let pokemonStore = PokemonStore()
+//    static let gymLeader = GymLeader
+//    
+//    static var previews: some View {
+//        TabContainer(gymLeader: gymLeader)
+//    }
+//}

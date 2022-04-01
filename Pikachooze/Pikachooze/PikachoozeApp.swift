@@ -4,6 +4,7 @@ import SwiftUI
 struct PikachoozeApp: App {
     @StateObject var pokemonStore = PokemonStore()
     let apiService = PokemonAPIService()
+
     var body: some Scene {
         WindowGroup {
             TabContainer()
