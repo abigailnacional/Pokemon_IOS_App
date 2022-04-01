@@ -22,7 +22,7 @@ class SearchView: ObservableObject {
             return pokemon
         } else {
             return pokemon
-                .filter { $0.name.lowercased().contains(searchText.lowercased()) }
+                .filter { $0.name.lowercased().contains(searchText.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)) }
         }
     }
     
