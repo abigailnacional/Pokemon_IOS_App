@@ -25,7 +25,7 @@
 		3F1FAB0927E3F03F0040F1C6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0827E3F03F0040F1C6 /* APIClient.swift */; };
 		3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0A27E3F0580040F1C6 /* APIError.swift */; };
 		3F1FAB0E27EC1E1D0040F1C6 /* GymLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */; };
-		3FF0089F27FBA993009659D9 /* FightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0089E27FBA993009659D9 /* FightView.swift */; };
+		3FF008A227FBAA90009659D9 /* FightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A127FBAA90009659D9 /* FightView.swift */; };
 		4F4C3DB527F68207001816DB /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB427F68207001816DB /* Fight.swift */; };
 		4F4C3DB727F68214001816DB /* Victory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB627F68214001816DB /* Victory.swift */; };
 		4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB827F6821B001816DB /* Defeat.swift */; };
@@ -60,7 +60,7 @@
 		3F1FAB0A27E3F0580040F1C6 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3F1FAB0C27E52E340040F1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLeader.swift; sourceTree = "<group>"; };
-		3FF0089E27FBA993009659D9 /* FightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightView.swift; sourceTree = "<group>"; };
+		3FF008A127FBAA90009659D9 /* FightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightView.swift; sourceTree = "<group>"; };
 		4F4C3DB427F68207001816DB /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		4F4C3DB627F68214001816DB /* Victory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victory.swift; sourceTree = "<group>"; };
 		4F4C3DB827F6821B001816DB /* Defeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defeat.swift; sourceTree = "<group>"; };
@@ -178,6 +178,14 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		3FF008A027FBAA20009659D9 /* Fight Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				3FF008A127FBAA90009659D9 /* FightView.swift */,
+			);
+			path = "Fight Mechanics";
+			sourceTree = "<group>";
+		};
 		4F4C3DBA27F68222001816DB /* Battles */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +203,7 @@
 			children = (
 				E9356B3727E83EBF00970D52 /* HomeView.swift */,
 				E9356B3927E83ECE00970D52 /* BattleView.swift */,
-				3FF0089E27FBA993009659D9 /* FightView.swift */,
+				3FF008A027FBAA20009659D9 /* Fight Mechanics */,
 				E9356B3527E83CBE00970D52 /* SearchView.swift */,
 				E9356B4127E8EE9C00970D52 /* PokemonDetailView.swift */,
 				E9356B3B27E83EDC00970D52 /* InventoryView.swift */,
@@ -275,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F4C3DB527F68207001816DB /* Fight.swift in Sources */,
-				3FF0089F27FBA993009659D9 /* FightView.swift in Sources */,
 				1BFB8FA527E814CD005EB157 /* TabContainer.swift in Sources */,
 				1BFB8FA127E8148F005EB157 /* Search.swift in Sources */,
 				E9356B4027E8EE8E00970D52 /* PokemonDetail.swift in Sources */,
@@ -293,6 +300,7 @@
 				1BFB8F9D27E81426005EB157 /* Home.swift in Sources */,
 				3F1FAB0E27EC1E1D0040F1C6 /* GymLeader.swift in Sources */,
 				3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */,
+				3FF008A227FBAA90009659D9 /* FightView.swift in Sources */,
 				3F1FAAED27E3DE2F0040F1C6 /* ContentView.swift in Sources */,
 				3F1FAAEB27E3DE2F0040F1C6 /* PikachoozeApp.swift in Sources */,
 				3F1FAAFD27E3E7040040F1C6 /* Pokemon.swift in Sources */,
