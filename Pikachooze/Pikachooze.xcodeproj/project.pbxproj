@@ -31,6 +31,7 @@
 		3FF008A827FBAC56009659D9 /* Suggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A727FBAC56009659D9 /* Suggested.swift */; };
 		3FF008AA27FBACC5009659D9 /* EvalMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A927FBACC5009659D9 /* EvalMatch.swift */; };
 		3FF008AC27FBADCB009659D9 /* GoodMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008AB27FBADCB009659D9 /* GoodMatch.swift */; };
+		3FF008AE27FBAE78009659D9 /* NeutralMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */; };
 		4F4C3DB527F68207001816DB /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB427F68207001816DB /* Fight.swift */; };
 		4F4C3DB727F68214001816DB /* Victory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB627F68214001816DB /* Victory.swift */; };
 		4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB827F6821B001816DB /* Defeat.swift */; };
@@ -71,6 +72,7 @@
 		3FF008A727FBAC56009659D9 /* Suggested.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggested.swift; sourceTree = "<group>"; };
 		3FF008A927FBACC5009659D9 /* EvalMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalMatch.swift; sourceTree = "<group>"; };
 		3FF008AB27FBADCB009659D9 /* GoodMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMatch.swift; sourceTree = "<group>"; };
+		3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutralMatch.swift; sourceTree = "<group>"; };
 		4F4C3DB427F68207001816DB /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		4F4C3DB627F68214001816DB /* Victory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victory.swift; sourceTree = "<group>"; };
 		4F4C3DB827F6821B001816DB /* Defeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defeat.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				3FF008A727FBAC56009659D9 /* Suggested.swift */,
 				3FF008A927FBACC5009659D9 /* EvalMatch.swift */,
 				3FF008AB27FBADCB009659D9 /* GoodMatch.swift */,
+				3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */,
 			);
 			path = "Fight Mechanics";
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				3F1FAB0127E3E72B0040F1C6 /* GraphQLEndpoint.swift in Sources */,
 				E9356B3A27E83ECE00970D52 /* BattleView.swift in Sources */,
 				3F1FAB0927E3F03F0040F1C6 /* APIClient.swift in Sources */,
+				3FF008AE27FBAE78009659D9 /* NeutralMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
