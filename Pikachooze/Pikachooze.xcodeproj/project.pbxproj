@@ -29,6 +29,7 @@
 		3FF008A427FBAB40009659D9 /* BattleResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A327FBAB40009659D9 /* BattleResults.swift */; };
 		3FF008A627FBABCB009659D9 /* FightResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A527FBABCB009659D9 /* FightResults.swift */; };
 		3FF008A827FBAC56009659D9 /* Suggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A727FBAC56009659D9 /* Suggested.swift */; };
+		3FF008AA27FBACC5009659D9 /* EvalMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A927FBACC5009659D9 /* EvalMatch.swift */; };
 		4F4C3DB527F68207001816DB /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB427F68207001816DB /* Fight.swift */; };
 		4F4C3DB727F68214001816DB /* Victory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB627F68214001816DB /* Victory.swift */; };
 		4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB827F6821B001816DB /* Defeat.swift */; };
@@ -67,6 +68,7 @@
 		3FF008A327FBAB40009659D9 /* BattleResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleResults.swift; sourceTree = "<group>"; };
 		3FF008A527FBABCB009659D9 /* FightResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightResults.swift; sourceTree = "<group>"; };
 		3FF008A727FBAC56009659D9 /* Suggested.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggested.swift; sourceTree = "<group>"; };
+		3FF008A927FBACC5009659D9 /* EvalMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalMatch.swift; sourceTree = "<group>"; };
 		4F4C3DB427F68207001816DB /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		4F4C3DB627F68214001816DB /* Victory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victory.swift; sourceTree = "<group>"; };
 		4F4C3DB827F6821B001816DB /* Defeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defeat.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				3FF008A327FBAB40009659D9 /* BattleResults.swift */,
 				3FF008A527FBABCB009659D9 /* FightResults.swift */,
 				3FF008A727FBAC56009659D9 /* Suggested.swift */,
+				3FF008A927FBACC5009659D9 /* EvalMatch.swift */,
 			);
 			path = "Fight Mechanics";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				3FF008A827FBAC56009659D9 /* Suggested.swift in Sources */,
 				4F4C3DB727F68214001816DB /* Victory.swift in Sources */,
 				E9356B3827E83EBF00970D52 /* HomeView.swift in Sources */,
+				3FF008AA27FBACC5009659D9 /* EvalMatch.swift in Sources */,
 				3FF008A427FBAB40009659D9 /* BattleResults.swift in Sources */,
 				E9356B3C27E83EDC00970D52 /* InventoryView.swift in Sources */,
 				3F1FAB0327E3E7420040F1C6 /* PokemonStore.swift in Sources */,
