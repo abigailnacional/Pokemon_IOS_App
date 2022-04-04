@@ -25,6 +25,14 @@
 		3F1FAB0927E3F03F0040F1C6 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0827E3F03F0040F1C6 /* APIClient.swift */; };
 		3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0A27E3F0580040F1C6 /* APIError.swift */; };
 		3F1FAB0E27EC1E1D0040F1C6 /* GymLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */; };
+		3FF008A227FBAA90009659D9 /* FightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A127FBAA90009659D9 /* FightView.swift */; };
+		3FF008A427FBAB40009659D9 /* BattleResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A327FBAB40009659D9 /* BattleResults.swift */; };
+		3FF008A627FBABCB009659D9 /* FightResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A527FBABCB009659D9 /* FightResults.swift */; };
+		3FF008A827FBAC56009659D9 /* Suggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A727FBAC56009659D9 /* Suggested.swift */; };
+		3FF008AA27FBACC5009659D9 /* EvalMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A927FBACC5009659D9 /* EvalMatch.swift */; };
+		3FF008AC27FBADCB009659D9 /* GoodMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008AB27FBADCB009659D9 /* GoodMatch.swift */; };
+		3FF008AE27FBAE78009659D9 /* NeutralMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */; };
+		3FF008B027FBAEFE009659D9 /* Unmatched.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008AF27FBAEFE009659D9 /* Unmatched.swift */; };
 		4F4C3DB527F68207001816DB /* Fight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB427F68207001816DB /* Fight.swift */; };
 		4F4C3DB727F68214001816DB /* Victory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB627F68214001816DB /* Victory.swift */; };
 		4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB827F6821B001816DB /* Defeat.swift */; };
@@ -59,6 +67,14 @@
 		3F1FAB0A27E3F0580040F1C6 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3F1FAB0C27E52E340040F1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLeader.swift; sourceTree = "<group>"; };
+		3FF008A127FBAA90009659D9 /* FightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightView.swift; sourceTree = "<group>"; };
+		3FF008A327FBAB40009659D9 /* BattleResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleResults.swift; sourceTree = "<group>"; };
+		3FF008A527FBABCB009659D9 /* FightResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightResults.swift; sourceTree = "<group>"; };
+		3FF008A727FBAC56009659D9 /* Suggested.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggested.swift; sourceTree = "<group>"; };
+		3FF008A927FBACC5009659D9 /* EvalMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalMatch.swift; sourceTree = "<group>"; };
+		3FF008AB27FBADCB009659D9 /* GoodMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodMatch.swift; sourceTree = "<group>"; };
+		3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeutralMatch.swift; sourceTree = "<group>"; };
+		3FF008AF27FBAEFE009659D9 /* Unmatched.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unmatched.swift; sourceTree = "<group>"; };
 		4F4C3DB427F68207001816DB /* Fight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fight.swift; sourceTree = "<group>"; };
 		4F4C3DB627F68214001816DB /* Victory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victory.swift; sourceTree = "<group>"; };
 		4F4C3DB827F6821B001816DB /* Defeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defeat.swift; sourceTree = "<group>"; };
@@ -176,6 +192,21 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		3FF008A027FBAA20009659D9 /* Fight Mechanics */ = {
+			isa = PBXGroup;
+			children = (
+				3FF008A127FBAA90009659D9 /* FightView.swift */,
+				3FF008A327FBAB40009659D9 /* BattleResults.swift */,
+				3FF008A527FBABCB009659D9 /* FightResults.swift */,
+				3FF008A727FBAC56009659D9 /* Suggested.swift */,
+				3FF008A927FBACC5009659D9 /* EvalMatch.swift */,
+				3FF008AB27FBADCB009659D9 /* GoodMatch.swift */,
+				3FF008AD27FBAE78009659D9 /* NeutralMatch.swift */,
+				3FF008AF27FBAEFE009659D9 /* Unmatched.swift */,
+			);
+			path = "Fight Mechanics";
+			sourceTree = "<group>";
+		};
 		4F4C3DBA27F68222001816DB /* Battles */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +224,7 @@
 			children = (
 				E9356B3727E83EBF00970D52 /* HomeView.swift */,
 				E9356B3927E83ECE00970D52 /* BattleView.swift */,
+				3FF008A027FBAA20009659D9 /* Fight Mechanics */,
 				E9356B3527E83CBE00970D52 /* SearchView.swift */,
 				E9356B4127E8EE9C00970D52 /* PokemonDetailView.swift */,
 				E9356B3B27E83EDC00970D52 /* InventoryView.swift */,
@@ -271,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF008AC27FBADCB009659D9 /* GoodMatch.swift in Sources */,
 				4F4C3DB527F68207001816DB /* Fight.swift in Sources */,
 				1BFB8FA527E814CD005EB157 /* TabContainer.swift in Sources */,
 				1BFB8FA127E8148F005EB157 /* Search.swift in Sources */,
@@ -278,25 +311,32 @@
 				3F1FAB0527E3E7560040F1C6 /* PokemonEndpoint.swift in Sources */,
 				1BFB8FA327E81496005EB157 /* Inventory.swift in Sources */,
 				E9356B4227E8EE9C00970D52 /* PokemonDetailView.swift in Sources */,
+				3FF008A627FBABCB009659D9 /* FightResults.swift in Sources */,
 				3F1FAAFF27E3E71A0040F1C6 /* GraphQLAPI.swift in Sources */,
 				4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */,
 				4FAB311A27F40906004BC2E9 /* BattlesDetail.swift in Sources */,
+				3FF008A827FBAC56009659D9 /* Suggested.swift in Sources */,
 				4F4C3DB727F68214001816DB /* Victory.swift in Sources */,
 				E9356B3827E83EBF00970D52 /* HomeView.swift in Sources */,
+				3FF008AA27FBACC5009659D9 /* EvalMatch.swift in Sources */,
+				3FF008A427FBAB40009659D9 /* BattleResults.swift in Sources */,
 				E9356B3C27E83EDC00970D52 /* InventoryView.swift in Sources */,
 				3F1FAB0327E3E7420040F1C6 /* PokemonStore.swift in Sources */,
 				1BFB8F9F27E81482005EB157 /* Battles.swift in Sources */,
 				1BFB8F9D27E81426005EB157 /* Home.swift in Sources */,
 				3F1FAB0E27EC1E1D0040F1C6 /* GymLeader.swift in Sources */,
 				3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */,
+				3FF008A227FBAA90009659D9 /* FightView.swift in Sources */,
 				3F1FAAED27E3DE2F0040F1C6 /* ContentView.swift in Sources */,
 				3F1FAAEB27E3DE2F0040F1C6 /* PikachoozeApp.swift in Sources */,
 				3F1FAAFD27E3E7040040F1C6 /* Pokemon.swift in Sources */,
+				3FF008B027FBAEFE009659D9 /* Unmatched.swift in Sources */,
 				E9356B3627E83CBE00970D52 /* SearchView.swift in Sources */,
 				3F1FAB0727E3E7670040F1C6 /* PokemonAPIService.swift in Sources */,
 				3F1FAB0127E3E72B0040F1C6 /* GraphQLEndpoint.swift in Sources */,
 				E9356B3A27E83ECE00970D52 /* BattleView.swift in Sources */,
 				3F1FAB0927E3F03F0040F1C6 /* APIClient.swift in Sources */,
+				3FF008AE27FBAE78009659D9 /* NeutralMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
