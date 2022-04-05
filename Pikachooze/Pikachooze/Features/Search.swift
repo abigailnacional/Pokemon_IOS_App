@@ -32,7 +32,7 @@ struct SearchRow: View {
                 Image(systemName: "circle")
             }
             .frame(maxWidth: 100, maxHeight: 100)
-            Text(pokemon.name)
+            Text(pokemon.name).font(Font.custom("Minecraft", size: 15))
         }
     }
 }

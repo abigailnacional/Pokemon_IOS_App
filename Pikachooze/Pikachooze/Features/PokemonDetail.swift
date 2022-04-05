@@ -27,14 +27,14 @@ struct PokemonDetail: View {
                 HStack(spacing: 40) {
                     VStack() {
                         Text("Types:")
-                            .font(.headline)
+                            .font(Font.custom("Minecraft", size: 20))
                             .padding(.trailing, 5)
-                        ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ)}
+                        ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ).font(Font.custom("Minecraft", size: 15))}
                     }
                     VStack {
                         Text("Resistances:")
-                            .font(.headline)
-                        ForEach(viewModel.pokemon.resistant, id: \.self) { rest in Text(rest)}
+                            .font(Font.custom("Minecraft", size: 20))
+                        ForEach(viewModel.pokemon.resistant, id: \.self) { rest in Text(rest).font(Font.custom("Minecraft", size: 15))}
                     }
                 }
             }

@@ -23,7 +23,7 @@ struct GymLeaderRow: View {
         HStack(alignment: .top) {
             leaderImage
             VStack(alignment: .leading) {
-                Text(gymLeader.name)
+                Text(gymLeader.name).font(Font.custom("Minecraft", size: 20))
                 badgeImage
             }
         }

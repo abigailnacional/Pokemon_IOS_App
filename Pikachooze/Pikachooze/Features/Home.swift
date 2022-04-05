@@ -5,7 +5,10 @@ struct Home: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("Welcome back, Professor Phillips!")
+                Text("Welcome back, Professor Phillips!").font(Font.custom("Minecraft", size: 20))
+                    .padding(15)
+                    .background(Color.gray)
+                    .cornerRadius(30)
                 Image("profile photo")
                     .padding(.top, 20)
                     .padding(.bottom, 20)
