@@ -6,9 +6,10 @@ struct Battles: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.gymLeaders) { battle in
-                NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymLeader: battle))) {
-                 GymLeaderRow(gymLeader: battle)
+
+            List(viewModel.gymLeaders) { gymleader in
+                NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymLeader: gymleader))) {
+                 GymLeaderRow(gymLeader: gymleader)
                 }
                 .navigationTitle("Battles")
             }

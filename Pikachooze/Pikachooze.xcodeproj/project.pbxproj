@@ -38,7 +38,6 @@
 		4F4C3DB727F68214001816DB /* Victory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB627F68214001816DB /* Victory.swift */; };
 		4F4C3DB927F6821B001816DB /* Defeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C3DB827F6821B001816DB /* Defeat.swift */; };
 		4FAB311A27F40906004BC2E9 /* BattlesDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAB311927F40906004BC2E9 /* BattlesDetail.swift */; };
-		E901746B27FC8CF20012B1FC /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E901746A27FC8CF20012B1FC /* Minecraft.ttf */; };
 		E9356B3627E83CBE00970D52 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3527E83CBE00970D52 /* SearchView.swift */; };
 		E9356B3827E83EBF00970D52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3727E83EBF00970D52 /* HomeView.swift */; };
 		E9356B3A27E83ECE00970D52 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9356B3927E83ECE00970D52 /* BattleView.swift */; };
@@ -49,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BED791227FCB8320043D543 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../../../../../Minecraft.ttf; sourceTree = "<group>"; };
 		1BFB8F9C27E81426005EB157 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		1BFB8F9E27E81482005EB157 /* Battles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battles.swift; sourceTree = "<group>"; };
 		1BFB8FA027E8148F005EB157 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -82,7 +82,6 @@
 		4F4C3DB627F68214001816DB /* Victory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Victory.swift; sourceTree = "<group>"; };
 		4F4C3DB827F6821B001816DB /* Defeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defeat.swift; sourceTree = "<group>"; };
 		4FAB311927F40906004BC2E9 /* BattlesDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlesDetail.swift; sourceTree = "<group>"; };
-		E901746A27FC8CF20012B1FC /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../../../../../../Downloads/Minecraft.ttf; sourceTree = "<group>"; };
 		E9356B3527E83CBE00970D52 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E9356B3727E83EBF00970D52 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E9356B3927E83ECE00970D52 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
@@ -227,7 +226,7 @@
 		E901746927FC8CD50012B1FC /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				E901746A27FC8CF20012B1FC /* Minecraft.ttf */,
+				1BED791227FCB8320043D543 /* Minecraft.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -237,11 +236,11 @@
 			children = (
 				E9356B3727E83EBF00970D52 /* HomeView.swift */,
 				E9356B3927E83ECE00970D52 /* BattleView.swift */,
+				3F1FAB0F27FCCA370040F1C6 /* BattleDetailView.swift */,
 				3FF008A027FBAA20009659D9 /* Fight Mechanics */,
 				E9356B3527E83CBE00970D52 /* SearchView.swift */,
 				E9356B4127E8EE9C00970D52 /* PokemonDetailView.swift */,
 				E9356B3B27E83EDC00970D52 /* InventoryView.swift */,
-				3F1FAB0F27FCCA370040F1C6 /* BattleDetailView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -306,7 +305,6 @@
 			files = (
 				E9356B4527E8F2DC00970D52 /* LaunchScreen.storyboard in Resources */,
 				3F1FAAF227E3DE310040F1C6 /* Preview Assets.xcassets in Resources */,
-				E901746B27FC8CF20012B1FC /* Minecraft.ttf in Resources */,
 				3F1FAAEF27E3DE310040F1C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-class BattleView: ObservableObject {
+final class BattleView: ObservableObject {
+    
     let pokeStore: PokemonStore
     let gymLeaders = GymLeader.previewData //list of gymleaders that is from the GymLeader Model
     private var cancellables: Set<AnyCancellable> = []

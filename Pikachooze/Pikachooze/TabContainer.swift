@@ -25,6 +25,7 @@ struct TabContainer: View {
                 .tag(Tab.Home)
                 
                 NavigationView{
+
                     Battles(viewModel: BattleView(pokeStore: pokemonStore))
                 }
                 .tabItem {
