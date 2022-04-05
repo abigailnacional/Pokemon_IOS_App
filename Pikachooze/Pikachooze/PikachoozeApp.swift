@@ -1,18 +1,21 @@
-//
-//  PikachoozeApp.swift
-//  Pikachooze
-//
-//  Created by student on 3/17/22.
-//
-
 import SwiftUI
 
 @main
 struct PikachoozeApp: App {
-    
+    @StateObject var pokemonStore = PokemonStore()
+    let apiService = PokemonAPIService()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContainer()
+                .task{
+                    if let pokemon = try? await apiService.fetchPokemons(number: 151) {
+                        pokemonStore.setPokemon(pokemon)
+                    } else{
+                        print(Text("could not catch 'em all!").font(Font.custom("Minecraft", size: 15)))
+                    }
+                }
+                .environmentObject(pokemonStore)
         }
     }
 }

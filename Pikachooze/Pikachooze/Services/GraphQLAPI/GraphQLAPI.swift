@@ -16,15 +16,11 @@ struct GraphQLAPI: APIClient {
         request.httpBody = (body + "\nvariables {first: \(number)}").data(using: .utf8)
         let payload = Payload(variables: ["first": number], query: body, operationName: "pokemons")
         request.httpBody = try! JSONEncoder().encode(payload)
-//        if let string = String(bytes: request.httpBody!, encoding: .utf8) {
-//            print(string)
-//        }
         request.httpMethod = "post"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let response: GraphQLEndpoint<ResponseData>.Response = try await perform(request: request)
         if let error = response.responseError?.first { throw GraphQLError.queryError("\(error.message ?? "") details: \(error.details ?? "")") }
         guard let responseData = response.responseData else { throw GraphQLError.noData}
-        //print(responseData)
         return responseData
     }
 }
