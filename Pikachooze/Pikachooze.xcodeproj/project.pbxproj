@@ -26,6 +26,7 @@
 		3F1FAB0B27E3F0580040F1C6 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0A27E3F0580040F1C6 /* APIError.swift */; };
 		3F1FAB0E27EC1E1D0040F1C6 /* GymLeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */; };
 		3F1FAB1027FCCA370040F1C6 /* BattleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAB0F27FCCA370040F1C6 /* BattleDetailView.swift */; };
+		3F1FAB1327FCDEC80040F1C6 /* Minecraft.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F1FAB1127FCDDC80040F1C6 /* Minecraft.ttf */; };
 		3FF008A227FBAA90009659D9 /* FightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A127FBAA90009659D9 /* FightView.swift */; };
 		3FF008A427FBAB40009659D9 /* BattleResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A327FBAB40009659D9 /* BattleResults.swift */; };
 		3FF008A627FBABCB009659D9 /* FightResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF008A527FBABCB009659D9 /* FightResults.swift */; };
@@ -48,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BED791227FCB8320043D543 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Minecraft.ttf; path = ../../../../../Minecraft.ttf; sourceTree = "<group>"; };
 		1BFB8F9C27E81426005EB157 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		1BFB8F9E27E81482005EB157 /* Battles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battles.swift; sourceTree = "<group>"; };
 		1BFB8FA027E8148F005EB157 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -70,6 +70,7 @@
 		3F1FAB0C27E52E340040F1C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1FAB0D27EC1E1D0040F1C6 /* GymLeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLeader.swift; sourceTree = "<group>"; };
 		3F1FAB0F27FCCA370040F1C6 /* BattleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleDetailView.swift; sourceTree = "<group>"; };
+		3F1FAB1127FCDDC80040F1C6 /* Minecraft.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Minecraft.ttf; sourceTree = "<group>"; };
 		3FF008A127FBAA90009659D9 /* FightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightView.swift; sourceTree = "<group>"; };
 		3FF008A327FBAB40009659D9 /* BattleResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleResults.swift; sourceTree = "<group>"; };
 		3FF008A527FBABCB009659D9 /* FightResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightResults.swift; sourceTree = "<group>"; };
@@ -226,7 +227,7 @@
 		E901746927FC8CD50012B1FC /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				1BED791227FCB8320043D543 /* Minecraft.ttf */,
+				3F1FAB1127FCDDC80040F1C6 /* Minecraft.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -305,6 +306,7 @@
 			files = (
 				E9356B4527E8F2DC00970D52 /* LaunchScreen.storyboard in Resources */,
 				3F1FAAF227E3DE310040F1C6 /* Preview Assets.xcassets in Resources */,
+				3F1FAB1327FCDEC80040F1C6 /* Minecraft.ttf in Resources */,
 				3F1FAAEF27E3DE310040F1C6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
