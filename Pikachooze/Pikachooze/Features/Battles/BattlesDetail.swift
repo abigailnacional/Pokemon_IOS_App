@@ -9,9 +9,8 @@ import SwiftUI
 
 
 struct BattlesDetail: View {
-    @ObservedObject var viewModel: FightView
-
-
+    @StateObject var viewModel: BattleDetailView
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -19,7 +18,9 @@ struct BattlesDetail: View {
                 Text(viewModel.gymLeader.name)
                     .font(.headline)
                 badgeImage
-                leaderPokemons
+                List(viewModel.gymLeaderPokemon) {
+                    leaderPokemons
+                }
             }
         }
     }
@@ -44,21 +45,19 @@ struct BattlesDetail: View {
         }
         .frame(width: 10, height: 10)
     }
+    //WORKING
     var leaderPokemons: some View {
-        ScrollView {
-            VStack{
-                AsyncImage(url: viewModel.pokemon.image){
-                    image in
+        let pokemon: Pokemon
+                AsyncImage(url: pokemon.image){ image in
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                 } placeholder: {
                     Image(systemName: "circle")
                 }
-                .frame(maxWidth: 100, maxHeight: 100)
-                Text(viewModel.pokemon.name).font(Font.custom("Minecraft", size: 15))
+                .frame(maxWidth: 50, maxHeight: 50)
+                Text(pokemon.name).font(Font.custom("Minecraft", size: 15))
             }
-        }
+        
     }
     
 }//end of BattlesDetail

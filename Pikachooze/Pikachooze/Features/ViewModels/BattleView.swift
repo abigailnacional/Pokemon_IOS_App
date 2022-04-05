@@ -11,11 +11,12 @@ import Combine
 final class BattleView: ObservableObject {
     
     let pokeStore: PokemonStore
+    let gymLeaders = GymLeader.previewData //list of gymleaders that is from the GymLeader Model
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inventoryPokemon: [Pokemon] = []
     
-    init(_ pokeStore: PokemonStore) {
+    init(pokeStore: PokemonStore) {
         self.pokeStore = pokeStore
         pokeStore.$inventoryPokemon
             .sink{ [weak self] pokeListPublishedFromStore in
