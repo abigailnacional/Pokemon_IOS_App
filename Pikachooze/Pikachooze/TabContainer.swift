@@ -25,7 +25,7 @@ struct TabContainer: View {
                 .tag(Tab.Home)
                 
                 NavigationView{
-                    Battles(viewModel: BattleView(gymLeader: gymLeader, pokeStore: pokemonStore))
+                    Battles(viewModel: BattleView(pokemonStore))
                 }
                 .tabItem {
                     Label("Battles", systemImage: "person.2.fill")

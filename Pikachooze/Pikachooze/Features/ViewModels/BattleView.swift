@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-class BattleView: ObservableObject {
+final class BattleView: ObservableObject {
+    
     let pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     

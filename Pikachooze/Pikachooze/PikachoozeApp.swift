@@ -12,7 +12,7 @@ struct PikachoozeApp: App {
                     if let pokemon = try? await apiService.fetchPokemons(number: 151) {
                         pokemonStore.setPokemon(pokemon)
                     } else{
-                        print("could not catch 'em all!").font(Font.custom("Minecraft", size: 15))
+                        print(Text("could not catch 'em all!").font(Font.custom("Minecraft", size: 15)))
                     }
                 }
                 .environmentObject(pokemonStore)

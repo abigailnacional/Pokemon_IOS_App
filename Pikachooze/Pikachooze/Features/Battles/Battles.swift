@@ -7,7 +7,7 @@ struct Battles: View {
     var body: some View {
         NavigationView {
             List(GymLeader.previewData) { battle in
-                NavigationLink(destination: BattlesDetail(viewModel: BattleView(viewModel.gymLeader, viewModel.pokeStore))) {
+                NavigationLink(destination: BattlesDetail(viewModel: FightView(GymLeader, PokemonStore, Pokemon))) {
                  GymLeaderRow(gymLeader: battle)
                 }
                 .navigationTitle("Battles")
