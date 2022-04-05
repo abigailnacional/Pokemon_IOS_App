@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BattlesDetail: View {
-    @StateObject var viewModel: BattleView
+    @StateObject var viewModel: BattleDetailView
     
     var body: some View {
         Text("Hello, World!")
