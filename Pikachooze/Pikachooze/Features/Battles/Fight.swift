@@ -8,12 +8,31 @@
 import SwiftUI
 
 struct Fight: View {
-    @StateObject var viewModel: BattleView
+    @StateObject var viewModel: BattleDetailView
+    @EnvironmentObject var pokeStore: PokemonStore
+
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            List(viewModel.gymLeaderPokemon) { gympokemon in
+                Text(gympokemon.name)
+            }
+            PlayerFight(viewModel: InventoryView(pokeStore: pokeStore))
+        }
     }
 }
+
+
+struct PlayerFight: View {
+    @StateObject var viewModel: InventoryView
+    
+    var body: some View {
+        List(viewModel.inventoryPokemon) { inventpokemon in
+            Text(inventpokemon.name)
+        }
+    }
+}
+
 
 //struct Fight_Previews: PreviewProvider {
 //    static var previews: some View {

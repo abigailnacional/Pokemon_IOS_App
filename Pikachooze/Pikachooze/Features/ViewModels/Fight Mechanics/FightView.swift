@@ -29,12 +29,10 @@ class FightView: ObservableObject {
     @Published var inventoryPokemon: [Pokemon] = []
     //You must specify which Gym Leader the player is going to battle.
     @Published var gymLeader: GymLeader
-    @Published var pokemon: Pokemon
     
-    init(_ gymLeader: GymLeader, _ pokeStore: PokemonStore, _ pokemon: Pokemon) {
+    init(_ gymLeader: GymLeader, _ pokeStore: PokemonStore) {
         self.pokeStore = pokeStore
         self.gymLeader = gymLeader
-        self.pokemon = pokemon
         pokeStore.$inventoryPokemon
             .sink{ [weak self] pokeListPublishedFromStore in
                 self?.inventoryPokemon = pokeListPublishedFromStore

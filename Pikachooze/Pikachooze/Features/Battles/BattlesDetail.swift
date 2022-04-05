@@ -17,9 +17,14 @@ struct BattlesDetail: View {
                 leaderImage
                 Text(viewModel.gymLeader.name)
                     .font(.headline)
+                NavigationLink(destination: Fight(viewModel: viewModel)) {
+                    Text("BATTLE!")
+                        .frame(width: 100)
+                        .foregroundColor(Color.red)
+                }
                 badgeImage
-                List(viewModel.gymLeaderPokemon) {
-                    leaderPokemons
+                List(viewModel.gymLeaderPokemon) { pokemon in
+                    PokemonRow(pokemon: pokemon)
                 }
             }
         }
@@ -45,22 +50,31 @@ struct BattlesDetail: View {
         }
         .frame(width: 10, height: 10)
     }
-    //WORKING
-    var leaderPokemons: some View {
-        let pokemon: Pokemon
-                AsyncImage(url: pokemon.image){ image in
-                    image
-                        .resizable()
-                } placeholder: {
-                    Image(systemName: "circle")
-                }
-                .frame(maxWidth: 50, maxHeight: 50)
-                Text(pokemon.name).font(Font.custom("Minecraft", size: 15))
-            }
-        
-    }
     
+ 
+        
+
 }//end of BattlesDetail
+
+struct PokemonRow: View {
+    let pokemon: Pokemon
+    
+    var body: some View {
+        List{
+            AsyncImage(url: pokemon.image) { image in
+                image
+                    .resizable()
+            } placeholder: {
+                Image(systemName: "circle")
+            }
+            .frame(maxWidth: 100, maxHeight: 100)
+            Text(pokemon.name).font(Font.custom("Minecraft", size:15))
+        }
+    }
+}
+
+
+
 
 //struct BattlesDetail_Previews: PreviewProvider {
 //    static let pokemonStore = PokemonStore()

@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct Victory: View {
-    @StateObject var viewModel: BattleView
+    @StateObject var viewModel: FightView
 
-    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Spacer()
+        Image("happi")
+        
     }
 }
 
 //struct Victory_Previews: PreviewProvider {
 //    static var previews: some View {
-//        Victory()
+//        Victory(viewModel: FightView)
 //    }
 //}
