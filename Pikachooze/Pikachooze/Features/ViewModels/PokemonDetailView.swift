@@ -35,17 +35,17 @@ class PokemonDetailView: ObservableObject {
                                          image: pokemon.image))
     }
     
-    var preferredName: String {
-        if let poke = pokemon.nickname {
-            if poke == "" {
-                return pokemon.name
-            } else {
-                return poke
-            }
-        } else {
-            return pokemon.name
-        }
-    }
+//    var preferredName: String {
+//        if let poke = pokemon.nickname {
+//            if poke == "" {
+//                return pokemon.name
+//            } else {
+//                return poke
+//            }
+//        } else {
+//            return pokemon.name
+//        }
+//    }
     
     func buttonTapped() {
         if inInventoryList == true {
