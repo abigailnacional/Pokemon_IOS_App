@@ -3,7 +3,7 @@ import Combine
 import UIKit
 
 class PokemonDetailView: ObservableObject {
-
+    
     private var pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     
@@ -23,13 +23,18 @@ class PokemonDetailView: ObservableObject {
             .store(in: &cancellables)
     }
     
-//    func nicknameSetter() -> String {
-//        if case let nicknam == pokemon.nickname {
-//            return nicknam
-//        } else {
-//            
-//        }
-//    }
+    func setNickname(input: String) {
+        pokemon.nickname = input
+        pokeStore.updatePokemon(Pokemon(id: pokemon.id,
+                                        number: pokemon.number,
+                                        name: pokemon.name,
+                                        nickname: input,
+                                        classification: pokemon.classification,
+                                        types: pokemon.types,
+                                        resistant: pokemon.resistant,
+                                        weaknesses: pokemon.weaknesses,
+                                        image: pokemon.image))
+    }
     
     func buttonTapped() {
         if inInventoryList == true {

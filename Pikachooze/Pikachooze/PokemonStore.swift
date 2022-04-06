@@ -7,6 +7,9 @@ class PokemonStore: ObservableObject  {
     @Published var pokemon: [Pokemon] = []
     @Published var inventoryPokemon : [Pokemon] = []
     
+    //@Published var inventoryPokemon: [String]
+    
+    
     //Sets the var pokemon as the list of our 151 Pokemon (list of 151 Pokemon is given as an input).
     func setPokemon(_ pokemonlist: [Pokemon]) {
         pokemon = pokemonlist
@@ -16,6 +19,9 @@ class PokemonStore: ObservableObject  {
     func updatePokemon(_ pokemonUpdate: Pokemon) {
         if let index = pokemon.firstIndex(where: { $0.id == pokemonUpdate.id }) {
             pokemon[index] = pokemonUpdate
+        }
+        if let pos = inventoryPokemon.firstIndex(where: { $0.id == pokemonUpdate.id }) {
+            inventoryPokemon[pos] = pokemonUpdate
         }
     }
     

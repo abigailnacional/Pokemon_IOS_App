@@ -35,15 +35,15 @@ struct InventoryRow: View {
                   Image(systemName: "book.fill")
                 }
             .frame(maxWidth: 70, maxHeight: 90)
-                Text(pokemon.name)
-                    .font(.headline)
+                Text(pokemon.nickname ?? pokemon.name)
+                .font(Font.custom("Minecraft", size: 15))
         }
     }
 }
 
-struct ReadingList_Previews: PreviewProvider {
-    static let pokeStore = PokemonStore()
-    static var previews: some View {
-        InventoryScreen(viewModel: InventoryView(pokeStore: pokeStore))
-    }
-}
+//struct Inventory_Previews: PreviewProvider {
+//    static let pokeStore = PokemonStore()
+//    static var previews: some View {
+//        InventoryScreen(viewModel: InventoryView(pokeStore: pokeStore))
+//    }
+//}
