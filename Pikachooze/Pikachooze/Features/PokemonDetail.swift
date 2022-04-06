@@ -2,10 +2,15 @@ import SwiftUI
 
 struct PokemonDetail: View {
     @StateObject var viewModel: PokemonDetailView
+    @State var nickname = ""
     
     var body: some View {
         ScrollView {
             VStack() {
+                Text(viewModel.pokemon.classification)
+                    .font(Font.custom("Minecraft", size: 12))
+                    .foregroundColor(.gray)
+                Spacer()
                 AsyncImage(url: viewModel.pokemon.image) { image in
                     image
                         .resizable()
@@ -13,16 +18,20 @@ struct PokemonDetail: View {
                     Image(systemName: "book.fill")
                 }
                 .frame(maxWidth: 150, maxHeight: 150)
-                Text(viewModel.pokemon.name)
-                    .font(.headline)
+                Text(viewModel.pokemon.nickname ?? viewModel.pokemon.name)
+                    .font(Font.custom("Minecraft", size: 20))
                     .textCase(.uppercase)
             }
             .padding(30)
             .border(Color.gray, width: 5)
             .cornerRadius(6)
+            Spacer()
             VStack(alignment: .leading) {
-                //                    Text("Nickname")
-                //                        .padding(.top, 20)
+                TextField("Enter or Edit Nickname!", text: $nickname)
+                    .onSubmit { viewModel.setNickname(input: nickname) }
+                    .disableAutocorrection(true)
+                Spacer()
+                Spacer()
                 Spacer()
                 HStack(spacing: 40) {
                     VStack() {

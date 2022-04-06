@@ -4,7 +4,7 @@ import SwiftUI
 struct Home: View {
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .center) {
                 Text("Welcome back, Professor Phillips!").font(Font.custom("Minecraft", size: 20))
                     .padding(15)
                     .background(Color.gray)

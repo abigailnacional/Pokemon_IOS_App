@@ -11,7 +11,7 @@ class PokemonDetailView: ObservableObject {
     @Published var isFull: Bool = false
     @Published var pokemon: Pokemon
     @Published var inventoryPokemon: [Pokemon] = []
-    
+
     init(_ pokemon: Pokemon, _ pokeStore: PokemonStore) {
         self.pokemon = pokemon
         self.pokeStore = pokeStore
@@ -23,13 +23,29 @@ class PokemonDetailView: ObservableObject {
             .store(in: &cancellables)
     }
     
-//    func nicknameSetter() -> String {
-//        if case let nicknam == pokemon.nickname {
-//            return nicknam
-//        } else {
-//            
-//        }
-//    }
+    func setNickname(input: String) {
+        pokeStore.updatePokemon(Pokemon(id: pokemon.id,
+                                        number: pokemon.number,
+                                        name: pokemon.name,
+                                        nickname: input,
+                                         classification: pokemon.classification,
+                                         types: pokemon.types,
+                                         resistant: pokemon.resistant,
+                                         weaknesses: pokemon.weaknesses,
+                                         image: pokemon.image))
+    }
+    
+    var preferredName: String {
+        if let poke = pokemon.nickname {
+            if poke == "" {
+                return pokemon.name
+            } else {
+                return poke
+            }
+        } else {
+            return pokemon.name
+        }
+    }
     
     func buttonTapped() {
         if inInventoryList == true {

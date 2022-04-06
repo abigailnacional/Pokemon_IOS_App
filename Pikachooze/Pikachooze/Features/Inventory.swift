@@ -35,8 +35,8 @@ struct InventoryRow: View {
                   Image(systemName: "book.fill")
                 }
             .frame(maxWidth: 70, maxHeight: 90)
-                Text(pokemon.name)
-                    .font(.headline)
+                Text(pokemon.nickname ?? pokemon.name)
+                .font(Font.custom("Minecraft", size: 15))
         }
     }
 }
