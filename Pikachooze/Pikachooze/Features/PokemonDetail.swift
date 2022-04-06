@@ -25,11 +25,17 @@ struct PokemonDetail: View {
             .padding(30)
             .border(Color.gray, width: 5)
             .cornerRadius(6)
-            Spacer()
+            .padding(.bottom, 20)
             VStack(alignment: .leading) {
-                TextField("Enter or Edit Nickname!", text: $nickname)
-                    .onSubmit { viewModel.setNickname(input: nickname) }
-                    .disableAutocorrection(true)
+                HStack {
+                    Text("Enter or Edit Nickname:")
+                        .font(Font.custom("Minecraft", size: 13))
+                    TextField(viewModel.pokemon.nickname ?? viewModel.pokemon.name, text: $nickname)
+                        .onSubmit { viewModel.setNickname(input: nickname) }
+                        .disableAutocorrection(true)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .font(Font.custom("Minecraft", size: 13))
+                }
                 Spacer()
                 Spacer()
                 Spacer()

@@ -3,7 +3,7 @@ import Combine
 import UIKit
 
 class PokemonDetailView: ObservableObject {
-
+    
     private var pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
     
@@ -11,7 +11,7 @@ class PokemonDetailView: ObservableObject {
     @Published var isFull: Bool = false
     @Published var pokemon: Pokemon
     @Published var inventoryPokemon: [Pokemon] = []
-
+    
     init(_ pokemon: Pokemon, _ pokeStore: PokemonStore) {
         self.pokemon = pokemon
         self.pokeStore = pokeStore
@@ -28,24 +28,24 @@ class PokemonDetailView: ObservableObject {
                                         number: pokemon.number,
                                         name: pokemon.name,
                                         nickname: input,
-                                         classification: pokemon.classification,
-                                         types: pokemon.types,
-                                         resistant: pokemon.resistant,
-                                         weaknesses: pokemon.weaknesses,
-                                         image: pokemon.image))
+                                        classification: pokemon.classification,
+                                        types: pokemon.types,
+                                        resistant: pokemon.resistant,
+                                        weaknesses: pokemon.weaknesses,
+                                        image: pokemon.image))
     }
     
-//    var preferredName: String {
-//        if let poke = pokemon.nickname {
-//            if poke == "" {
-//                return pokemon.name
-//            } else {
-//                return poke
-//            }
-//        } else {
-//            return pokemon.name
-//        }
-//    }
+    //    var preferredName: String {
+    //        if let poke = pokemon.nickname {
+    //            if poke == "" {
+    //                return pokemon.name
+    //            } else {
+    //                return poke
+    //            }
+    //        } else {
+    //            return pokemon.name
+    //        }
+    //    }
     
     func buttonTapped() {
         if inInventoryList == true {
