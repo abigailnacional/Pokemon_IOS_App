@@ -6,10 +6,12 @@ class InventoryView: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inventoryPokemon: [Pokemon] = []
+
     
     var filteredInventory: [Pokemon] {
         return inventoryPokemon
     }
+    
     
     init(pokeStore: PokemonStore) {
         self.pokeStore = pokeStore

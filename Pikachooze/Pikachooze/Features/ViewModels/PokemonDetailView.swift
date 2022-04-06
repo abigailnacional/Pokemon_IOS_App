@@ -24,6 +24,7 @@ class PokemonDetailView: ObservableObject {
     }
     
     func setNickname(input: String) {
+        pokemon.nickname = input
         pokeStore.updatePokemon(Pokemon(id: pokemon.id,
                                         number: pokemon.number,
                                         name: pokemon.name,
@@ -34,18 +35,6 @@ class PokemonDetailView: ObservableObject {
                                         weaknesses: pokemon.weaknesses,
                                         image: pokemon.image))
     }
-    
-    //    var preferredName: String {
-    //        if let poke = pokemon.nickname {
-    //            if poke == "" {
-    //                return pokemon.name
-    //            } else {
-    //                return poke
-    //            }
-    //        } else {
-    //            return pokemon.name
-    //        }
-    //    }
     
     func buttonTapped() {
         if inInventoryList == true {

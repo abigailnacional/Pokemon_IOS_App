@@ -41,9 +41,9 @@ struct InventoryRow: View {
     }
 }
 
-struct ReadingList_Previews: PreviewProvider {
-    static let pokeStore = PokemonStore()
-    static var previews: some View {
-        InventoryScreen(viewModel: InventoryView(pokeStore: pokeStore))
-    }
-}
+//struct Inventory_Previews: PreviewProvider {
+//    static let pokeStore = PokemonStore()
+//    static var previews: some View {
+//        InventoryScreen(viewModel: InventoryView(pokeStore: pokeStore))
+//    }
+//}
