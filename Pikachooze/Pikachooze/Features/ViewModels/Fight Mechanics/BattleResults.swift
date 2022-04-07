@@ -13,12 +13,18 @@ extension FightView {
     // playerWon is a boolean value that indicates whether the player won the battle against the Gym Leader.
     var playerWon: Bool {
         //Iterate through all of the gym leader's Pokemon
-        //DEVELOPER NOTE: We are iterating through the inventory list, change this to the official battle matchup list instead (once that part has been programmed) because we want the player to use their customized order.
         //Keep a tally as to who won
         var playerWins: Int = 0
         var glWins: Int = 0
-        for glPokeIndex in 0...gymLeader.gymPokemon.count {
-            if (gymLeader.gymPokemon[glPokeIndex].id == pokeWon(gymLeader.gymPokemon[glPokeIndex], inventoryPokemon[glPokeIndex]).id){
+        var userPokemon : [Pokemon] { //handles the logic with the suggested pokemon vs non suggested pokemon
+            if (usingSuggested){
+                return suggestedOrder
+            } else{
+                return inventoryPokemon
+            }
+        }
+        for glPokeIndex in 0..<gymLeader.gymPokemon.count {
+            if (gymLeader.gymPokemon[glPokeIndex].id == pokeWon(gymLeader.gymPokemon[glPokeIndex], userPokemon[glPokeIndex]).id){ //problem with differing lengths of pokemon
                 //Gym leader won, add to their wins
                 glWins = glWins + 1
             } else {
@@ -41,6 +47,4 @@ extension FightView {
             }
         }
     }
-    
-    
 }

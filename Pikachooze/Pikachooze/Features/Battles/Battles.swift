@@ -5,14 +5,11 @@ struct Battles: View {
     @StateObject var viewModel: BattleView
     
     var body: some View {
-        NavigationView {
-
-            List(viewModel.gymLeaders) { gymleader in
-                NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymLeader: gymleader))) {
-                 GymLeaderRow(gymLeader: gymleader)
-                }
-                .navigationTitle("Battles")
+        List(viewModel.gymLeaders) { gymleader in
+            NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymleader, viewModel.pokeStore))) {
+             GymLeaderRow(gymLeader: gymleader)
             }
+            .navigationTitle("Battles")
         }
     }
 }
@@ -25,6 +22,7 @@ struct GymLeaderRow: View {
             leaderImage
             VStack(alignment: .leading) {
                 Text(gymLeader.name).font(Font.custom("Minecraft", size: 20))
+                Text(gymLeader.city).font(Font.custom("Minecraft", size: 15))
                 badgeImage
             }
         }
@@ -34,11 +32,11 @@ struct GymLeaderRow: View {
         AsyncImage(url:gymLeader.image) { image in
             image
                 .resizable()
-                .cornerRadius(6)
+                .aspectRatio(contentMode: .fit)
         } placeholder: {
                 ProgressView()
         }
-        .frame(width: 50, height: 50)
+        .frame(maxWidth: 100, maxHeight: 100)
     }
     
     var badgeImage: some View{

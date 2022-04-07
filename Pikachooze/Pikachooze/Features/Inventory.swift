@@ -34,7 +34,7 @@ struct InventoryRow: View {
             } placeholder: {
                   Image(systemName: "book.fill")
                 }
-            .frame(maxWidth: 70, maxHeight: 90)
+            .frame(width: 100, height: 100)
                 Text(pokemon.nickname ?? pokemon.name)
                 .font(Font.custom("Minecraft", size: 15))
         }

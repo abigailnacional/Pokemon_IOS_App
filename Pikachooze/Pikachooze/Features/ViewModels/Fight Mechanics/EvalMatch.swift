@@ -17,11 +17,11 @@ extension FightView {
     // arr[i][j] = -1 if the player will lose
     var classifiedEdges: [[Int]] {
         //Make return array
-        var advantEdges: [[Int]] = []
-        //Fill array with 0s
+        var advantEdges = [[Int]] (repeating:[Int](repeating: 0 , count: inventoryPokemon.count ), count: gymLeader.gymPokemon.count)
         // x is the index for the Gym Leader's Pokemon, y is the index for the player's Pokemon
-        for x in 0..<gymLeader.gymPokemon.count {
-            for y in 0..<inventoryPokemon.count {
+     
+        for x in 0..<gymLeader.gymPokemon.count - 1 {
+            for y in 0..<inventoryPokemon.count - 1  {
                 advantEdges[x][y] = 0
             }
         }

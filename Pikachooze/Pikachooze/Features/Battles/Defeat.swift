@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Defeat: View {
-    @StateObject var viewModel: BattleView
+    @StateObject var viewModel: FightView
 
     
     var body: some View {

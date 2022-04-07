@@ -29,6 +29,7 @@ class FightView: ObservableObject {
     @Published var inventoryPokemon: [Pokemon] = []
     //You must specify which Gym Leader the player is going to battle.
     @Published var gymLeader: GymLeader
+    @Published var usingSuggested: Bool = false
     
     init(_ gymLeader: GymLeader, _ pokeStore: PokemonStore) {
         self.pokeStore = pokeStore
@@ -39,7 +40,9 @@ class FightView: ObservableObject {
             }
             .store(in: &cancellables)
     }
-    
+    func suggestionButtonTapped(){
+        usingSuggested = !usingSuggested
+    }
     //List to keep track of player Pokemon that we have looked at
     //Initialized to false because we start out not having looked at anything yet
     //There are always 5 Pokemon in the inventory, and we can't use inventory.count here, so count is hard coded to be 5
