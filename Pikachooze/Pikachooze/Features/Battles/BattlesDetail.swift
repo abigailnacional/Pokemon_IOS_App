@@ -12,6 +12,7 @@ struct BattlesDetail: View {
     @StateObject var viewModel: BattleDetailView
     @State var isActive = false
     @State var showAlert = false
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
         ScrollView{
@@ -62,12 +63,15 @@ struct BattlesDetail: View {
                     .padding(.leading, 25)
                     .padding(.top, 10)
                     .padding(.bottom, 15)
-                ForEach(viewModel.gymLeaderPokemon, id:\.self){
-                    PokemonRow(pokemon: $0)
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.gymLeaderPokemon, id:\.self){
+                        PokemonRow(pokemon: $0)
+                    }
                 }
             }
         }
     }
+
     
     var leaderImage: some View {
         AsyncImage(url:viewModel.gymLeader.image) { image in
@@ -97,26 +101,21 @@ struct BattlesDetail: View {
 }//end of BattlesDetail
 
 
-/*
- HStack {
-     Text("Types:")
-         .font(Font.custom("Minecraft", size: 13))
-         .padding(.trailing, 5)
-     ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ).font(Font.custom("Minecraft", size: 10))}
- }
- */
+
 struct PokemonRow: View {
     let pokemon: Pokemon
     var body: some View {
-        AsyncImage(url: pokemon.image) { image in
-            image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        } placeholder: {
-            Image(systemName: "circle")
+        VStack {
+            AsyncImage(url: pokemon.image) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                Image(systemName: "circle")
+            }
+            .frame(width: 100, height: 100)
+            Text(pokemon.name).font(Font.custom("Minecraft", size:15))
         }
-        .frame(width: 200, height: 200)
-        Text(pokemon.name).font(Font.custom("Minecraft", size:15))
     }
 }
 

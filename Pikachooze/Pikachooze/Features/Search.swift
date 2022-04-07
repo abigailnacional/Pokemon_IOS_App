@@ -51,13 +51,11 @@ struct SearchRow: View {
                 .font(Font.custom("Minecraft", size: 15))
         }
         .foregroundColor(Color.gray)
-        .padding(10)
+        .padding(30)
         .overlay(
                     RoundedRectangle(cornerRadius: 20)
                         .stroke(Color.gray, lineWidth: 3)
                 )
-        //.border(Color.gray, width: 5)
-        //.cornerRadius(10)
     }
 }
 
