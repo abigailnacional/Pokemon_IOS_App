@@ -15,6 +15,7 @@ final class BattleView: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     @Published var inventoryPokemon: [Pokemon] = []
+
     
     init(pokeStore: PokemonStore) {
         self.pokeStore = pokeStore
@@ -24,5 +25,6 @@ final class BattleView: ObservableObject {
             }
             .store(in: &cancellables)
     }
+    
     
 }

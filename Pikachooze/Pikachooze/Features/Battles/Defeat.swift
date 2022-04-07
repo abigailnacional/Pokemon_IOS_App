@@ -13,7 +13,13 @@ struct Defeat: View {
     
     var body: some View {
         Spacer()
-        Image("sadd")
+        VStack(alignment: .center){
+            Image("sadd")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text("You lost :(. Choose better Pokemon next time!").font(Font.custom("Minecraft", size: 15))
+        }
+        .padding(.bottom, 50)
     }
 }
 

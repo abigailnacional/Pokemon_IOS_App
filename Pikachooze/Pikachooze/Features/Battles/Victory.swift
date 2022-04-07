@@ -12,8 +12,13 @@ struct Victory: View {
 
     var body: some View {
         Spacer()
-        Image("happi")
-        
+        VStack(alignment: .center){
+            Image("happi")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text("Congrats, you won!").font(Font.custom("Minecraft", size: 15))
+        }
+        .padding(.bottom, 50)
     }
 }
 

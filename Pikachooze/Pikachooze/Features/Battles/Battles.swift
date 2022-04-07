@@ -3,29 +3,62 @@ import SwiftUI
 
 struct Battles: View {
     @StateObject var viewModel: BattleView
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach((viewModel.gymLeaders), id: \.self) { gymLeader in
+                    NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymLeader, viewModel.pokeStore))) {
+                        GymLeaderRow(gymLeader: gymLeader)
+                    }
+                }
+            }
+        }
+        .navigationTitle("Battles")
+        /*
         List(viewModel.gymLeaders) { gymleader in
             NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymleader, viewModel.pokeStore))) {
              GymLeaderRow(gymLeader: gymleader)
             }
             .navigationTitle("Battles")
-        }
+        }*/
     }
 }
+
+/*
+ ScrollView {
+     LazyVGrid(columns: columns) {
+         ForEach((viewModel.filteredPokemon), id: \.self) { pokemon in
+             NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
+             ) {
+                 SearchRow(pokemon: pokemon)
+             }
+         }
+     }
+     .searchable(text: $viewModel.searchText)
+     .disableAutocorrection(true)
+     .navigationTitle("Choose Your Pokemon!")
+ */
 
 struct GymLeaderRow: View {
     let gymLeader: GymLeader
     
     var body: some View {
-        HStack(alignment: .top) {
+        VStack {
             leaderImage
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 Text(gymLeader.name).font(Font.custom("Minecraft", size: 20))
                 Text(gymLeader.city).font(Font.custom("Minecraft", size: 15))
                 badgeImage
             }
         }
+        .foregroundColor(Color.gray)
+        .padding(30)
+        .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.gray, lineWidth: 3)
+                )
     }
     
     var leaderImage: some View {

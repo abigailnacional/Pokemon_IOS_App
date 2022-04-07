@@ -43,7 +43,17 @@ struct Fight: View {
         Button(action:{viewModel.suggestionButtonTapped()}, label :{viewModel.usingSuggested ? Text("Use Your Own Order ") : Text("Use Suggested Order")})
         HStack{
             List(viewModel.gymLeader.gymPokemon) { gympokemon in
-                Text(gympokemon.name)
+                VStack{
+                    AsyncImage(url: gympokemon.image) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(maxWidth: 100, maxHeight: 100)
+                    Text(gympokemon.name)
+                }
             }
             PlayerFight(viewModel: viewModel)
         }
@@ -56,11 +66,31 @@ struct PlayerFight: View {
     var body: some View {
         if(viewModel.usingSuggested){
             List(viewModel.suggestedOrder) { inventpokemon in
-                Text(inventpokemon.name)
+                VStack{
+                    AsyncImage(url: inventpokemon.image) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(maxWidth: 100, maxHeight: 100)
+                    Text(inventpokemon.name)
+                }
             }
         } else {
             List(viewModel.inventoryPokemon) { inventpokemon in
-                Text(inventpokemon.name)
+                VStack {
+                    AsyncImage(url: inventpokemon.image) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(maxWidth: 100, maxHeight: 100)
+                    Text(inventpokemon.name)
+                }
             }
         }
     }

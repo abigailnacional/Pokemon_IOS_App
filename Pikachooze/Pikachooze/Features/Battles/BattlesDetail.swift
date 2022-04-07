@@ -15,13 +15,21 @@ struct BattlesDetail: View {
     
     var body: some View {
         ScrollView{
-            VStack{
-                leaderImage
-                Text(viewModel.gymLeader.name)
-                    .font(Font.custom("Minecraft", size: 35))
+            VStack(alignment: .center){
+                VStack {
+                    leaderImage
+                    Text(viewModel.gymLeader.name)
+                        .font(Font.custom("Minecraft", size: 35))
+                }
+                .foregroundColor(Color.gray)
+                .padding(10)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.gray, lineWidth: 5)
+                        )
                 Text("Location: \(viewModel.gymLeader.city)")
                     .font(Font.custom("Minecraft", size: 20))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.leading, 25)
                     .padding(.top, 10)
                     .padding(.bottom, 15)
@@ -69,7 +77,7 @@ struct BattlesDetail: View {
         } placeholder: {
                 ProgressView()
         }
-        .frame(maxWidth: 300, maxHeight: 300)
+        .frame(maxWidth: 200, maxHeight: 200)
     }
     
     var badgeImage: some View{
@@ -88,6 +96,15 @@ struct BattlesDetail: View {
 
 }//end of BattlesDetail
 
+
+/*
+ HStack {
+     Text("Types:")
+         .font(Font.custom("Minecraft", size: 13))
+         .padding(.trailing, 5)
+     ForEach(viewModel.pokemon.types, id: \.self) { typ in Text(typ).font(Font.custom("Minecraft", size: 10))}
+ }
+ */
 struct PokemonRow: View {
     let pokemon: Pokemon
     var body: some View {

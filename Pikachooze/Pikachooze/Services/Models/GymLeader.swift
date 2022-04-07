@@ -1,6 +1,6 @@
 import Foundation
 
-struct GymLeader: Identifiable, Codable {
+struct GymLeader: Identifiable, Codable, Hashable {
     var id: String
     var name: String
     var image: URL
