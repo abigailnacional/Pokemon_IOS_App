@@ -238,10 +238,10 @@
 				E9356B3727E83EBF00970D52 /* HomeView.swift */,
 				E9356B3927E83ECE00970D52 /* BattleView.swift */,
 				3F1FAB0F27FCCA370040F1C6 /* BattleDetailView.swift */,
-				3FF008A027FBAA20009659D9 /* Fight Mechanics */,
 				E9356B3527E83CBE00970D52 /* SearchView.swift */,
 				E9356B4127E8EE9C00970D52 /* PokemonDetailView.swift */,
 				E9356B3B27E83EDC00970D52 /* InventoryView.swift */,
+				3FF008A027FBAA20009659D9 /* Fight Mechanics */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
