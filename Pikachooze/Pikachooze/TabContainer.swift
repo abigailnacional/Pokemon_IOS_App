@@ -17,7 +17,7 @@ struct TabContainer: View {
         Group {
             TabView(selection: $selectedTab){
                 NavigationView{
-                    Home()
+                    Home(viewModel: HomeView(pokeStore: pokemonStore))
                 }
                 .tabItem {
                     Label("Home", systemImage: "house")
