@@ -18,7 +18,13 @@ struct Defeat: View {
             Image("sadd")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("You lost :(. Choose better Pokemon next time!").font(Font.custom("Minecraft", size: 15))
+            Text("You lost :(. Choose better Pokemon next time!").font(Font.custom("Minecraft", size: 25))
+                .foregroundColor(Color.gray)
+                .padding(10)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.gray, lineWidth: 3)
+                        )
         }
         .padding(.bottom, 50)
     }

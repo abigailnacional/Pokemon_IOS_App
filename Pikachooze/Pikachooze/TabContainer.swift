@@ -33,7 +33,8 @@ struct TabContainer: View {
                     }
                     .tabItem {
                         Image("home")
-                        Spacer()
+                        Text("Home")
+                        //Spacer()
                     }
                     .tag(Tab.Home)
                     
@@ -42,6 +43,7 @@ struct TabContainer: View {
                     }
                     .tabItem {
                         Image("battles")
+                        Text("Battles")
                     }
                     .tag(Tab.Battles)
                     
@@ -50,6 +52,7 @@ struct TabContainer: View {
                     }
                     .tabItem {
                         Image("search")
+                        Text("Search")
                     }
                     .tag(Tab.Search)
                     
@@ -58,6 +61,7 @@ struct TabContainer: View {
                     }
                     .tabItem{
                         Image("inventory")
+                        Text("Inventory")
                     }
                     .tag(Tab.Inventory)
                 }

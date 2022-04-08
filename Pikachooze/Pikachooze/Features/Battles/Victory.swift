@@ -17,11 +17,35 @@ struct Victory: View {
             Image("happi")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("Congrats, you won!").font(Font.custom("Minecraft", size: 15))
+            HStack{
+                badgeImage
+                Text("Congrats, you won!").font(Font.custom("Minecraft", size: 25))
+            }
+            .foregroundColor(Color.gray)
+            .padding(10)
+            .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 3)
+                    )
+            
         }
+        
         .padding(.bottom, 50)
     }
+    
+    var badgeImage: some View{
+        AsyncImage(url: viewModel.gymLeader.gymBadge) { image in
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(6)
+        } placeholder: {
+            ProgressView()
+        }
+        .frame(width: 50, height: 50)
+    }
 }
+
 
 //struct Victory_Previews: PreviewProvider {
 //    static var previews: some View {
