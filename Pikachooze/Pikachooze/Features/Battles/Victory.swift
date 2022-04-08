@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Victory: View {
     //@StateObject var viewModel: FightView
-    var gymBadgeURL : URL 
+    var gymBadgeURL : URL
+    
     var body: some View {
         Spacer()
         VStack(alignment: .center){
@@ -27,14 +28,13 @@ struct Victory: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.gray, lineWidth: 3)
                     )
-            
         }
         
         .padding(.bottom, 50)
     }
     
     var badgeImage: some View{
-        AsyncImage(url: viewModel.gymLeader.gymBadge) { image in
+        AsyncImage(url: gymBadgeURL) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
