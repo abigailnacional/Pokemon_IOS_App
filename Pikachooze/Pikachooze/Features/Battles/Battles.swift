@@ -6,6 +6,21 @@ struct Battles: View {
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach((viewModel.gymLeaders), id: \.self) { gymLeader in
+                    NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymLeader, viewModel.pokeStore))) {
+                        GymLeaderRow(gymLeader: gymLeader)
+                    }
+                }
+            }
+        }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Battle").font(Font.custom("Minecraft", size: 48))
+                        .padding(.top, 20)
+            }
+        /*
         VStack {
             Text("Battles").font(Font.custom("Minecraft", size: 30))
             ScrollView {
@@ -17,6 +32,7 @@ struct Battles: View {
                     }
                 }
             }
+            .padding(.top, 10)*/
         }
 
         /*

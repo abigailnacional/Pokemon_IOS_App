@@ -22,7 +22,7 @@ struct TabContainer: View {
                 .padding(.top, 33.0)
                 .ignoresSafeArea()
                 .foregroundColor(.white)
-                .frame(width: 400, height: 52)
+                .frame(width: 400, height: 70)
                 .scaledToFill()
                 .background(Color(red: 0.22, green: 0.416, blue: 0.733))
             

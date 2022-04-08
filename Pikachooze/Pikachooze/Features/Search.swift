@@ -17,7 +17,12 @@ struct Search: View {
             }
             .searchable(text: $viewModel.searchText)
             .disableAutocorrection(true)
-            .navigationTitle("Choose Your Pokemon!")
+            //.navigationTitle("Choose Your Pokemon!")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Search").font(Font.custom("Minecraft", size: 48))
+                        .padding(.top, 20)
+            }
         }
         /*
         List(viewModel.filteredPokemon) { pokemon in
@@ -30,6 +35,7 @@ struct Search: View {
         .disableAutocorrection(true)
         .navigationTitle("Choose Your Pokemon!")*/
     }
+}
 }
 
 
