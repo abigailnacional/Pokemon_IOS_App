@@ -17,9 +17,16 @@ struct InventoryScreen: View {
                         Label("Remove", systemImage: "trash")
                     }
                 }
-        }.navigationTitle("My Pokemon")
+        }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text("My Pokemon").font(Font.custom("Minecraft", size: 48))
+                    .padding(.top, 20)
+            }
+        }
     }
 }
+
 
 struct InventoryRow: View {
     let pokemon: Pokemon

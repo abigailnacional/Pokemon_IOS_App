@@ -15,31 +15,15 @@ struct Battles: View {
                 }
             }
         }
-        .navigationTitle("Battles")
-        /*
-        List(viewModel.gymLeaders) { gymleader in
-            NavigationLink(destination: BattlesDetail(viewModel: BattleDetailView(gymleader, viewModel.pokeStore))) {
-             GymLeaderRow(gymLeader: gymleader)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Battle").font(Font.custom("Minecraft", size: 48))
+                        .padding(.top, 20)
             }
-            .navigationTitle("Battles")
-        }*/
+        }
     }
 }
 
-/*
- ScrollView {
-     LazyVGrid(columns: columns) {
-         ForEach((viewModel.filteredPokemon), id: \.self) { pokemon in
-             NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
-             ) {
-                 SearchRow(pokemon: pokemon)
-             }
-         }
-     }
-     .searchable(text: $viewModel.searchText)
-     .disableAutocorrection(true)
-     .navigationTitle("Choose Your Pokemon!")
- */
 
 struct GymLeaderRow: View {
     let gymLeader: GymLeader

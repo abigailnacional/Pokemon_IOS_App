@@ -12,44 +12,91 @@ struct TabContainer: View {
     @State var selectedTab: Tab = .Home
     @EnvironmentObject var pokemonStore: PokemonStore
     
+    init () {
+        UITabBar.appearance().backgroundColor = UIColor(hex: "#386ABBff")
+    }
     
     var body: some View {
-        Group {
-            TabView(selection: $selectedTab){
-                NavigationView{
-                    Home()
+        VStack{
+            Image("logo")
+                .padding(.top, 33.0)
+                .ignoresSafeArea()
+                .foregroundColor(.white)
+                .frame(width: 400, height: 70)
+                .scaledToFill()
+                .background(Color(red: 0.22, green: 0.416, blue: 0.733))
+            
+            Group {
+                TabView(selection: $selectedTab){
+                    NavigationView{
+                        Home(viewModel: HomeView(pokeStore: pokemonStore))
+                    }
+                    .tabItem {
+                        Image("home")
+                        Text("Home")
+                        //Spacer()
+                    }
+                    .tag(Tab.Home)
+                    
+                    NavigationView{
+                        Battles(viewModel: BattleView(pokeStore: pokemonStore))
+                    }
+                    .tabItem {
+                        Image("battles")
+                        Text("Battles")
+                    }
+                    .tag(Tab.Battles)
+                    
+                    NavigationView {
+                        Search(viewModel: SearchView(pokemonStore: pokemonStore))
+                    }
+                    .tabItem {
+                        Image("search")
+                        Text("Search")
+                    }
+                    .tag(Tab.Search)
+                    
+                    NavigationView{
+                        InventoryScreen(viewModel: InventoryView(pokeStore: pokemonStore))
+                    }
+                    .tabItem{
+                        Image("inventory")
+                        Text("Inventory")
+                    }
+                    .tag(Tab.Inventory)
                 }
-                .tabItem {
-                    Label("Home", systemImage: "house")
+            }
+            .ignoresSafeArea()
+        }
+
+    }
+}
+
+extension UIColor {
+    public convenience init?(hex: String) {
+        let r, g, b, a: CGFloat
+
+        if hex.hasPrefix("#") {
+            let start = hex.index(hex.startIndex, offsetBy: 1)
+            let hexColor = String(hex[start...])
+
+            if hexColor.count == 8 {
+                let scanner = Scanner(string: hexColor)
+                var hexNumber: UInt64 = 0
+
+                if scanner.scanHexInt64(&hexNumber) {
+                    r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
+                    g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
+                    b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
+                    a = CGFloat(hexNumber & 0x000000ff) / 255
+
+                    self.init(red: r, green: g, blue: b, alpha: a)
+                    return
                 }
-                .tag(Tab.Home)
-                
-                NavigationView{
-                    Battles(viewModel: BattleView(pokeStore: pokemonStore))
-                }
-                .tabItem {
-                    Label("Battles", systemImage: "person.2.fill")
-                }
-                .tag(Tab.Battles)
-                
-                NavigationView {
-                    Search(viewModel: SearchView(pokemonStore: pokemonStore))
-                }
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-                .tag(Tab.Search)
-                
-                NavigationView{
-                    InventoryScreen(viewModel: InventoryView(pokeStore: pokemonStore))
-                }
-                .tabItem{
-                    Label("Inventory", systemImage: "list.dash")
-                        
-                }
-                .tag(Tab.Inventory)
             }
         }
+
+        return nil
     }
 }
 

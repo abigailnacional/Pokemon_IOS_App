@@ -14,10 +14,17 @@ struct Defeat: View {
     var body: some View {
         Spacer()
         VStack(alignment: .center){
+            Image("defeat")
             Image("sadd")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text("You lost :(. Choose better Pokemon next time!").font(Font.custom("Minecraft", size: 15))
+            Text("You lost :(. Choose better Pokemon next time!").font(Font.custom("Minecraft", size: 25))
+                .foregroundColor(Color.gray)
+                .padding(10)
+                .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.gray, lineWidth: 3)
+                        )
         }
         .padding(.bottom, 50)
     }

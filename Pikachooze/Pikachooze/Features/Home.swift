@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct Home: View {
+    @StateObject var viewModel: HomeView
     
     var body: some View {
         ScrollView {
@@ -13,28 +14,45 @@ struct Home: View {
                 Image("profile photo")
                     .padding(.top, 20)
                     .padding(.bottom, 20)
-                Text("Your Top 3")
-                    .padding(.bottom, 10)
-                    .font(Font.custom("Minecraft", size: 20))
-                Image("dummy top three")
-            }
-        }
-        /*
-        TabView {
-            ZStack {
-                Text("Pickachooze")
-                List {
-                    Text("Welcome Back!")
-                    Text("image")
-                    Text("Your top 3")
+                VStack{
+                    if viewModel.inventoryPokemon.count > 0 {
+                        Text("Your Top 3")
+                            .font(Font.custom("Minecraft", size: 15))
+                    }
+                    
+                    ForEach((viewModel.inventoryPokemon), id: \.self) { pokemon in
+                        HomeRow(pokemon: pokemon)
+                    }
                 }
             }
-        }*/
+        }
     }
 }
 
+struct HomeRow: View {
+    let pokemon: Pokemon
+    
+    var body: some View {
+        HStack {
+            AsyncImage(url: pokemon.image) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(4)
+            } placeholder: {
+                  Image(systemName: "circle.fill")
+                }
+            .frame(width: 100, height: 100)
+            Text(pokemon.nickname ?? pokemon.name)
+                .font(Font.custom("Minecraft", size: 15))
+        }
+    }
+}
+
+/*
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
     }
 }
+*/
