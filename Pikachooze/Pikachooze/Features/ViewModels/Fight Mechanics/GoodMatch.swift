@@ -34,8 +34,8 @@ extension FightView {
             if ((classifiedEdges[glPokeIndex][playPokeIndex] == 1) && !visited[playPokeIndex]){
                 //Mark this player Pokemon as visited
                 visited[playPokeIndex] = true
-                //If the player Pokemon isn't assigned to a gym leader Pokemon or the current gym leader Pokemon has another suitable match
-                if ((assign[playPokeIndex] < 0) || (bipartiteMatch(glPokeIndex) == true)) {
+                //If the player Pokemon isn't assigned to a gym leader Pokemon
+                if (assign[playPokeIndex] < 0) {
                     //Assign this player Pokemon to this gym leader Pokemon
                     assign[playPokeIndex] = glPokeIndex
                     //We found a match, so return true
