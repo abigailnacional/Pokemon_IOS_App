@@ -2,7 +2,7 @@
 //  EvalMatch.swift
 //  Pikachooze
 //
-//  Created by student on 3/29/22.
+//  Created by Abby Nacional on 3/29/22.
 //
 // This extension of FightView contains the array with evaluations of all potential matchups.
 
