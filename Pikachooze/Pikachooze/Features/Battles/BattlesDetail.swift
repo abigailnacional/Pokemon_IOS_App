@@ -36,7 +36,7 @@ struct BattlesDetail: View {
                     .padding(.bottom, 15)
                 NavigationLink(destination: Fight(viewModel: FightView(viewModel.gymLeader, viewModel.pokeStore)), isActive: $isActive) {
                     Button (action:{
-                        if (!viewModel.isEmpty){
+                        if (viewModel.hasEnough){
                             isActive = true
                         } else{
                             showAlert = true
@@ -54,7 +54,7 @@ struct BattlesDetail: View {
                                         .stroke(Color.red, lineWidth: 5))
                     }
                     
-                }.alert("Oh no! Your inventory is Empty :(", isPresented: $showAlert ) {
+                }.alert("You need to have at least the same number of pokemon as \(viewModel.gymLeader.name)", isPresented: $showAlert ) {
                     Button("OK", role: .cancel) { }
                 }
                 Text("\(viewModel.gymLeader.name)'s Pokemon")

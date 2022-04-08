@@ -4,8 +4,8 @@ struct Fight: View {
     @StateObject var viewModel: FightView
     @State var isActive = false
     var body: some View {
-        if(viewModel.playerWon){
-            NavigationLink(destination: Victory(viewModel: viewModel), isActive: $isActive ) {
+        if(viewModel.playerWon()){
+            NavigationLink(destination: Victory(gymBadgeURL: viewModel.gymLeader.gymBadge), isActive: $isActive ) {
                 Button (action:{
                     isActive = true
                 }){
@@ -22,7 +22,7 @@ struct Fight: View {
                 }
             }
         } else{
-            NavigationLink(destination: Defeat(viewModel: viewModel), isActive: $isActive ) {
+            NavigationLink(destination: Defeat(gymBadgeURL: viewModel.gymLeader.gymBadge), isActive: $isActive ) {
                 Button (action:{
                     isActive = true
                 }){
@@ -55,46 +55,46 @@ struct Fight: View {
                     Text(gympokemon.name)
                 }
             }
-            PlayerFight(viewModel: viewModel)
+            if(viewModel.usingSuggested){
+                List(viewModel.suggestedOrdering) { inventpokemon in
+                    VStack{
+                        AsyncImage(url: inventpokemon.image) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(maxWidth: 100, maxHeight: 100)
+                        Text(inventpokemon.name)
+                    }
+                }
+            } else {
+                List(viewModel.inventoryPokemon) { inventpokemon in
+                    VStack {
+                        AsyncImage(url: inventpokemon.image) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        .frame(maxWidth: 100, maxHeight: 100)
+                        Text(inventpokemon.name)
+                    }
+                }
+            }
         }
      }
 }
 
 
-struct PlayerFight: View {
-    @ObservedObject var viewModel : FightView
-    var body: some View {
-        if(viewModel.usingSuggested){
-            List(viewModel.suggestedOrder) { inventpokemon in
-                VStack{
-                    AsyncImage(url: inventpokemon.image) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(maxWidth: 100, maxHeight: 100)
-                    Text(inventpokemon.name)
-                }
-            }
-        } else {
-            List(viewModel.inventoryPokemon) { inventpokemon in
-                VStack {
-                    AsyncImage(url: inventpokemon.image) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(maxWidth: 100, maxHeight: 100)
-                    Text(inventpokemon.name)
-                }
-            }
-        }
-    }
-}
+//struct PlayerFight: View {
+//    @ObservedObject var viewModel : FightView
+//    var body: some View {
+//
+//    }
+//}
 
 
 //struct Fight_Previews: PreviewProvider {

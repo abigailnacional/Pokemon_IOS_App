@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Victory: View {
-    @StateObject var viewModel: FightView
-
+    //@StateObject var viewModel: FightView
+    var gymBadgeURL : URL 
     var body: some View {
         Spacer()
         VStack(alignment: .center){

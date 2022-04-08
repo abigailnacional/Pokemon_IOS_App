@@ -11,26 +11,31 @@ import Combine
 
 extension FightView {
     // playerWon is a boolean value that indicates whether the player won the battle against the Gym Leader.
-    var playerWon: Bool {
+    func playerWon() -> Bool {
+        print("I am in playerWon function")
         //Iterate through all of the gym leader's Pokemon
         //Keep a tally as to who won
         var playerWins: Int = 0
         var glWins: Int = 0
-        var userPokemon : [Pokemon] { //handles the logic with the suggested pokemon vs non suggested pokemon
-            if (usingSuggested){
-                return suggestedOrder
-            } else{
-                return inventoryPokemon
-            }
-        }
         for glPokeIndex in 0..<gymLeader.gymPokemon.count {
-            if (gymLeader.gymPokemon[glPokeIndex].id == pokeWon(gymLeader.gymPokemon[glPokeIndex], userPokemon[glPokeIndex]).id){ //problem with differing lengths of pokemon
-                //Gym leader won, add to their wins
-                glWins = glWins + 1
-            } else {
-                //Player won, add to their wins
-                playerWins = playerWins + 1
+            if(usingSuggested){
+                if (gymLeader.gymPokemon[glPokeIndex].id == pokeWon(gymLeader.gymPokemon[glPokeIndex], suggestedOrdering[glPokeIndex]).id){ //problem with differing lengths of pokemon
+                    //Gym leader won, add to their wins
+                    glWins = glWins + 1
+                } else {
+                    //Player won, add to their wins
+                    playerWins = playerWins + 1
+                }
+            } else{
+                if (gymLeader.gymPokemon[glPokeIndex].id == pokeWon(gymLeader.gymPokemon[glPokeIndex], inventoryPokemon[glPokeIndex]).id){ //problem with differing lengths of pokemon
+                    //Gym leader won, add to their wins
+                    glWins = glWins + 1
+                } else {
+                    //Player won, add to their wins
+                    playerWins = playerWins + 1
+                }
             }
+           
         }
         //Whomever won more individual fights wins the overall battle.
         if (playerWins > glWins){

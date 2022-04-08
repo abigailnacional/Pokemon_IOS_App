@@ -12,6 +12,7 @@ import Combine
 extension FightView {
     func noMatchPlayPoke() -> [Pokemon] {
         var ret: [Pokemon] = []
+        clearInvToUnm()
         //Find all player Pokemon who don't yet have a match
         for i in 0..<inventoryPokemon.count {
             if (assign[i] == -1){
@@ -26,6 +27,7 @@ extension FightView {
     
     func noMatchGymPoke() -> [Pokemon] {
         var ret: [Pokemon] = []
+        clearGlToUnm()
         //Find all gym leaderPokemon who don't yet have a match
         for i in 0..<gymLeader.gymPokemon.count {
             if (!assign.contains(i)){

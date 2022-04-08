@@ -6,7 +6,7 @@ class BattleDetailView: ObservableObject {
 
     @Published var gymLeader: GymLeader
     @Published var gymLeaderPokemon : [Pokemon]
-    @Published var isEmpty: Bool = true
+    @Published var hasEnough: Bool = false
     let pokeStore: PokemonStore
     private var cancellables: Set<AnyCancellable> = []
    
@@ -16,7 +16,9 @@ class BattleDetailView: ObservableObject {
         self.gymLeaderPokemon = gymLeader.gymPokemon
         pokeStore.$inventoryPokemon
             .sink{ [weak self] pokeListPublishedFromStore in
-                self?.isEmpty = pokeListPublishedFromStore.isEmpty
+                if (pokeListPublishedFromStore.count >= gymLeader.gymPokemon.count){
+                    self?.hasEnough = true
+                }
             }
             .store(in: &cancellables)
     }

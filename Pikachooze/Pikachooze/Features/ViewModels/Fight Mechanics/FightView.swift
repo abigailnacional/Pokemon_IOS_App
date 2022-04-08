@@ -30,8 +30,10 @@ class FightView: ObservableObject {
     //You must specify which Gym Leader the player is going to battle.
     @Published var gymLeader: GymLeader
     @Published var usingSuggested: Bool = false
+    @Published var suggestedOrdering: [Pokemon] = []
     
     init(_ gymLeader: GymLeader, _ pokeStore: PokemonStore) {
+        //print("I am being intialized")
         self.pokeStore = pokeStore
         self.gymLeader = gymLeader
         pokeStore.$inventoryPokemon
@@ -39,9 +41,15 @@ class FightView: ObservableObject {
                 self?.inventoryPokemon = pokeListPublishedFromStore
             }
             .store(in: &cancellables)
+        self.suggestedOrdering = suggestedOrder()
     }
     func suggestionButtonTapped(){
-        usingSuggested = !usingSuggested
+        //print("button is being tapped")
+        if(usingSuggested){
+            usingSuggested = false
+        } else{
+            usingSuggested = true
+        }
     }
     //List to keep track of player Pokemon that we have looked at
     //Initialized to false because we start out not having looked at anything yet
@@ -59,10 +67,16 @@ class FightView: ObservableObject {
     //In case there are unmatched player Pokemon, use this array to keep track of their index in the inventory array.
     //Indices for invToUnmatched are the inventory index of the Pokemon.
     //Values for invToUnmatched is the unmatched array index of the Pokemon.
-    var invToUnmatched: [Int] = []
+    var invToUnmatched = [Int](repeating: -1, count: 5)
+    func clearInvToUnm(){
+        invToUnmatched = [Int](repeating: -1, count: 5)
+    }
     
     //In case there are unmatched gym leader Pokemon, use this array to keep track of their index in the gymLeader.gymPokemon array.
     //Indices for glToUnmatched are the gymLeader.gymPokemon index of the Pokemon.
     //Values for glToUnmatched is the unmatched array index of the Pokemon.
-    var glToUnmatched: [Int] = []
+    var glToUnmatched = [Int](repeating: -1, count: 5)
+    func clearGlToUnm(){
+        glToUnmatched = [Int](repeating: -1, count: 5)
+    }
 }
