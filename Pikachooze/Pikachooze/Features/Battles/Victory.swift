@@ -13,6 +13,7 @@ struct Victory: View {
     var body: some View {
         Spacer()
         VStack(alignment: .center){
+            Image("victory")
             Image("happi")
                 .resizable()
                 .aspectRatio(contentMode: .fit)

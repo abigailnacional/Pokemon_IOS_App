@@ -14,6 +14,7 @@ struct Defeat: View {
     var body: some View {
         Spacer()
         VStack(alignment: .center){
+            Image("defeat")
             Image("sadd")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
