@@ -2,7 +2,7 @@
 //  Suggested.swift
 //  Pikachooze
 //
-//  Created by student on 3/29/22.
+//  Created by Abby Nacional on 3/29/22.
 //
 // This part of FightView holds the suggested line-up of Pokemon for the player, based on which gym leader they are battling and which Pokemon are in the player's inventory.
 

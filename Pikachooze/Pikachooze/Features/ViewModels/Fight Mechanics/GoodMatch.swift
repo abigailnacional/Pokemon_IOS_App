@@ -2,7 +2,7 @@
 //  GoodMatch.swift
 //  Pikachooze
 //
-//  Created by student on 3/29/22.
+//  Created by Abby Nacional on 3/29/22.
 //
 // This extension of FightView contains maximum matching functions for advantageous matches.
 
