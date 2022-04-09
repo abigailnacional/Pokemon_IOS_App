@@ -1,6 +1,10 @@
 
 import SwiftUI
 
+extension Color {
+    static let grey = Color(red: 232 / 255, green: 232 / 255, blue: 232 / 255)
+}
+
 struct Home: View {
     @StateObject var viewModel: HomeView
     
@@ -9,7 +13,7 @@ struct Home: View {
             VStack(alignment: .center) {
                 Text("Welcome back, Professor Phillips!").font(Font.custom("Minecraft", size: 15))
                     .padding(15)
-                    .background(Color.gray)
+                    .background(Color.grey)
                     .cornerRadius(30)
                 Image("profile photo")
                     .padding(.top, 20)
@@ -56,3 +60,4 @@ struct Home_Previews: PreviewProvider {
     }
 }
 */
+
