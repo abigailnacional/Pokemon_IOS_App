@@ -13,7 +13,6 @@ struct TabContainer: View {
     @EnvironmentObject var pokemonStore: PokemonStore
     
     init () {
-        //UITabBar.appearance().backgroundColor = UIColor(hex: "#386ABBff")
         if #available(iOS 13.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
             tabBarAppearance.configureWithDefaultBackground()
@@ -42,9 +41,8 @@ struct TabContainer: View {
                         Home(viewModel: HomeView(pokeStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("home")
-                        Text("Home")
-                        //Spacer()
+                        Image("home small")
+                        //Text("Home")
                     }
                     .tag(Tab.Home)
                     
@@ -52,8 +50,9 @@ struct TabContainer: View {
                         Battles(viewModel: BattleView(pokeStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("battles")
-                        Text("Battles")
+                        Image("battles small")
+                        
+                        //Text("Battles")
                     }
                     .tag(Tab.Battles)
                     
@@ -61,8 +60,8 @@ struct TabContainer: View {
                         Search(viewModel: SearchView(pokemonStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("search")
-                        Text("Search")
+                        Image("search small")
+                        //Text("Search")
                     }
                     .tag(Tab.Search)
                     
@@ -70,11 +69,13 @@ struct TabContainer: View {
                         InventoryScreen(viewModel: InventoryView(pokeStore: pokemonStore))
                     }
                     .tabItem{
-                        Image("inventory")
-                        Text("Inventory")
+                        Image("inventory small")
+                        //Text("Inventory")
                     }
                     .tag(Tab.Inventory)
                 }
+
+                //.accentColor(Color.white)
             }
             .ignoresSafeArea()
         }
