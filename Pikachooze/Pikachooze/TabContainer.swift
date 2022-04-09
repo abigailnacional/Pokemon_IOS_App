@@ -13,7 +13,17 @@ struct TabContainer: View {
     @EnvironmentObject var pokemonStore: PokemonStore
     
     init () {
-        UITabBar.appearance().backgroundColor = UIColor(hex: "#386ABBff")
+        //UITabBar.appearance().backgroundColor = UIColor(hex: "#386ABBff")
+        if #available(iOS 13.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            tabBarAppearance.backgroundColor = UIColor(hex: "#386ABBff")
+            UITabBar.appearance().standardAppearance = tabBarAppearance
+
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
+        }
     }
     
     var body: some View {

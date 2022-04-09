@@ -24,16 +24,6 @@ struct Search: View {
                         .padding(.top, 20)
             }
         }
-        /*
-        List(viewModel.filteredPokemon) { pokemon in
-            NavigationLink(destination: PokemonDetail(viewModel: PokemonDetailView(pokemon, viewModel.pokemonStore))
-            ) {
-                SearchRow(pokemon: pokemon)
-            }
-        }
-        .searchable(text: $viewModel.searchText)
-        .disableAutocorrection(true)
-        .navigationTitle("Choose Your Pokemon!")*/
     }
 }
 }
@@ -50,7 +40,7 @@ struct SearchRow: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Image(systemName: "circle")
+                ProgressView()
             }
             .frame(maxWidth: 100, maxHeight: 100)
             Text(pokemon.nickname ?? pokemon.name)

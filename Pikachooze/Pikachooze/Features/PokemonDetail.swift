@@ -15,7 +15,7 @@ struct PokemonDetail: View {
                     image
                         .resizable()
                 } placeholder: {
-                    Image(systemName: "book.fill")
+                    ProgressView()
                 }
                 .frame(maxWidth: 150, maxHeight: 150)
                 .frame(minWidth: 150, minHeight: 150)
@@ -29,10 +29,6 @@ struct PokemonDetail: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.gray, lineWidth: 5)
                     )
-            /*
-            .padding(30)
-            .border(Color.gray, width: 5)
-            .cornerRadius(6)*/
             .padding(.top, 30)
             .padding(.bottom, 20)
             VStack(alignment: .leading) {
@@ -76,11 +72,3 @@ struct PokemonDetail: View {
         }
     }
 }
-
-
-//struct PokemonDetail_Previews: PreviewProvider {
-//    static let viewModel = PokemonDetailView(apiService: PokemonAPIService(), book: Book.previewData[0])
-//    static var previews: some View {
-//        PokemonScreen(viewModel: viewModel)
-//    }
-//}
