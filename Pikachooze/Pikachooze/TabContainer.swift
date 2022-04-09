@@ -41,8 +41,10 @@ struct TabContainer: View {
                         Home(viewModel: HomeView(pokeStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("home small")
-                        //Text("Home")
+                        VStack{
+                            Image("home small")
+                            Text("Home")
+                        }
                     }
                     .tag(Tab.Home)
                     
@@ -51,8 +53,7 @@ struct TabContainer: View {
                     }
                     .tabItem {
                         Image("battles small")
-                        
-                        //Text("Battles")
+                        Text("Battles")
                     }
                     .tag(Tab.Battles)
                     
@@ -61,7 +62,7 @@ struct TabContainer: View {
                     }
                     .tabItem {
                         Image("search small")
-                        //Text("Search")
+                        Text("Search")
                     }
                     .tag(Tab.Search)
                     
@@ -70,7 +71,7 @@ struct TabContainer: View {
                     }
                     .tabItem{
                         Image("inventory small")
-                        //Text("Inventory")
+                        Text("Inventory")
                     }
                     .tag(Tab.Inventory)
                 }
