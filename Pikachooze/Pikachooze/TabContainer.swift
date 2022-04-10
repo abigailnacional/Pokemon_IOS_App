@@ -8,6 +8,7 @@ enum Tab {
     case Inventory
 }
 
+
 struct TabContainer: View {
     @State var selectedTab: Tab = .Home
     @EnvironmentObject var pokemonStore: PokemonStore
@@ -23,6 +24,7 @@ struct TabContainer: View {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
         }
+
     }
     
     var body: some View {
@@ -41,10 +43,7 @@ struct TabContainer: View {
                         Home(viewModel: HomeView(pokeStore: pokemonStore))
                     }
                     .tabItem {
-                        VStack{
-                            Image("home small")
-                            Text("Home")
-                        }
+                        Label("Home", systemImage: ("house.fill"))
                     }
                     .tag(Tab.Home)
                     
@@ -52,8 +51,7 @@ struct TabContainer: View {
                         Battles(viewModel: BattleView(pokeStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("battles small")
-                        Text("Battles")
+                        Label("Battles", systemImage: ("person.2.fill"))
                     }
                     .tag(Tab.Battles)
                     
@@ -61,8 +59,7 @@ struct TabContainer: View {
                         Search(viewModel: SearchView(pokemonStore: pokemonStore))
                     }
                     .tabItem {
-                        Image("search small")
-                        Text("Search")
+                        Label("Search", systemImage: "magnifyingglass")
                     }
                     .tag(Tab.Search)
                     
@@ -70,13 +67,11 @@ struct TabContainer: View {
                         InventoryScreen(viewModel: InventoryView(pokeStore: pokemonStore))
                     }
                     .tabItem{
-                        Image("inventory small")
-                        Text("Inventory")
+                        Label("Inventory", systemImage: "list.bullet")
                     }
                     .tag(Tab.Inventory)
                 }
-
-                //.accentColor(Color.white)
+                .accentColor(Color.yellow)
             }
             .ignoresSafeArea()
         }
