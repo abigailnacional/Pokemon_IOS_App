@@ -20,7 +20,7 @@ struct Home: View {
                     .padding(.bottom, 20)
                 VStack{
                     if viewModel.inventoryPokemon.count > 0 {
-                        Text("Your Top 3")
+                        Text("Your Pokemons")
                             .font(Font.custom("Minecraft", size: 15))
                     }
                     
